@@ -10,7 +10,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 
 /**
  *
@@ -18,13 +17,10 @@ import javafx.scene.control.Label;
  */
 public class LoginUICntl implements Initializable {
     
-    @FXML
-    private Label label;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void requestAuthenticate(ActionEvent event) {
+        System.out.println("You clicked submit!");
     }
     
     @Override
