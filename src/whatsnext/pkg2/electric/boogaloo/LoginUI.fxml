@@ -2,13 +2,26 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whatsnext.pkg2.electric.boogaloo.LoginUICntl">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
+      <children>
+        <Button layoutX="255.0" layoutY="265.0" mnemonicParsing="false" prefHeight="33.9609375" prefWidth="91.0" text="SUBMIT" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="89.0" prefHeight="52.9609375" prefWidth="91.0" text="LOGIN" textAlignment="CENTER">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Label>
+        <PasswordField layoutX="200.0" layoutY="218.0" prefWidth="200.0" />
+        <PasswordField layoutX="200.0" layoutY="178.0" prefWidth="200.0" />
+        <Label layoutX="140.0" layoutY="221.0" text="Password" />
+        <Label layoutX="136.0" layoutY="181.0" text="Username" />
+      </children>
+    </Pane>
+  </children>
 </AnchorPane>
