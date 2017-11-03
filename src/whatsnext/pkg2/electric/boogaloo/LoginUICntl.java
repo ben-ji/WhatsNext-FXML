@@ -5,12 +5,17 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
+import javafx.stage.Stage;
 
 /**
  *
@@ -22,7 +27,10 @@ public class LoginUICntl implements Initializable {
     private PasswordField pf;
     @FXML
     private PasswordField uf;
-    UserList ul;
+    private UserList ul;
+    private Stage stage;
+    private Parent root;
+    private Scene scene;
     
         private Boolean checkUsers(UserList ul){
         for(int i = 0; i < ul.getUserList().size(); i++){
@@ -34,18 +42,24 @@ public class LoginUICntl implements Initializable {
     }
     
     @FXML
-    private void authenticate(ActionEvent event) {
+    private void authenticate(ActionEvent event) throws IOException{
         //TODO: Professor Haynes says we will be using persistent data later in the course. For this reason, test data will be hardcoded for the login process for the time being.
         ul = new UserList();
         ul.add(new User("admin", "password"));
         ul.add(new User("kats", "cream"));
         if(checkUsers(ul)){
             System.out.println("User validated");
+            stage = (Stage) pf.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }
         else{
             System.out.println("User invalid.");
         }
     }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
