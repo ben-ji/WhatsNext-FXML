@@ -13,6 +13,6 @@
          </font>
       </Label>
       <Button layoutX="34.0" layoutY="352.0" mnemonicParsing="false" text="Options" />
-      <Button id="ProfileButton" fx:id="ProfileButton" layoutX="507.0" layoutY="352.0" mnemonicParsing="false" onAction="#showProfile" text="Profile" />
+      <Button id="profileButton" fx:id="profileButton" layoutX="507.0" layoutY="352.0" mnemonicParsing="false" onAction="#showProfile" text="Profile" />
    </children>
 </AnchorPane>

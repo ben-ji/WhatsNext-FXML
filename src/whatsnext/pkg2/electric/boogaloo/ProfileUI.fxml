@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="129.0" layoutY="50.0" prefHeight="101.0" prefWidth="349.0" text="Temporary Profile Page">
+      <Label layoutX="199.0" layoutY="21.0" prefHeight="55.0" prefWidth="135.0" text="User Profile">
          <font>
-            <Font size="32.0" />
+            <Font size="24.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@propic.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

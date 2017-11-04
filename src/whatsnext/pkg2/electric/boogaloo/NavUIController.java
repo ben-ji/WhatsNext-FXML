@@ -5,9 +5,11 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,7 +38,15 @@ public class NavUIController implements Initializable {
     
     @FXML
     public void showProfile(){
-        
+        stage = (Stage)profileButton.getScene().getWindow();
+        try{
+            root = FXMLLoader.load(getClass().getResource("ProfileUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching Profile.fxml");
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }
