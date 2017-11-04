@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  */
 public class NavUIController implements Initializable {
 
+    @FXML
     private Button profileButton;
     private Scene scene;
     private Stage stage;
@@ -35,6 +36,7 @@ public class NavUIController implements Initializable {
         // TODO
     }    
     
+    @FXML
     public void showProfile(){
         stage = (Stage)profileButton.getScene().getWindow();
         try{
