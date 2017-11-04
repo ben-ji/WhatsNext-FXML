@@ -5,6 +5,10 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -13,9 +17,20 @@ import javafx.stage.Stage;
  */
 public class NavCntl {
     
+    Stage stage;
+    private Parent root;
+    private Scene scene;
     
-    public NavCntl(){
-        System.out.println("NavCntl run");
+    public NavCntl(Stage stage){
+        this.stage = stage;
+        try{
+            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching NavUI.fxml");
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

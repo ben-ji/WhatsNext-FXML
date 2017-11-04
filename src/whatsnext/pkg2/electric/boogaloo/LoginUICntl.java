@@ -29,8 +29,6 @@ public class LoginUICntl implements Initializable {
     private PasswordField uf;
     private UserList ul;
     private Stage stage;
-    private Parent root;
-    private Scene scene;
     
         private Boolean checkUsers(UserList ul){
         for(int i = 0; i < ul.getUserList().size(); i++){
@@ -50,10 +48,8 @@ public class LoginUICntl implements Initializable {
         if(checkUsers(ul)){
             System.out.println("User validated");
             stage = (Stage) pf.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            NavCntl controller = new NavCntl(stage);
+            
         }
         else{
             System.out.println("User invalid.");
