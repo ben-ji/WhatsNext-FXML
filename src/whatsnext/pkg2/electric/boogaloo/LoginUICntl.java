@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +27,7 @@ public class LoginUICntl implements Initializable {
     @FXML
     private PasswordField pf;
     @FXML
-    private PasswordField uf;
+    private TextField uf;
     private UserList ul;
     private Stage stage;
     
