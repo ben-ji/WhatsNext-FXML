@@ -44,7 +44,6 @@ public class LoginUICntl implements Initializable {
         ul.add(new User("admin", "password"));
         ul.add(new User("kats", "cream"));
         if(checkUsers(ul)){
-            System.out.println("User validated");
             stage = (Stage) pf.getScene().getWindow();
             NavCntl controller = new NavCntl(stage);
             
