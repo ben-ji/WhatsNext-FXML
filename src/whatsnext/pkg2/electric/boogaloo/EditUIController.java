@@ -49,7 +49,6 @@ public class EditUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
-    private ProfileModel pm;
     @FXML
     private TextField userInfoField;
     @FXML
@@ -58,6 +57,7 @@ public class EditUIController implements Initializable {
     private TextField achievementsField;
     @FXML
     private TextField friendsField;
+    private ProfileModel pm;
     /**
      * Initializes the controller class.
      */
@@ -65,7 +65,7 @@ public class EditUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String username = "username";
         String dateCreate = "dateCreated";
-        ProfileModel pm = ProfileModel.getInstance();
+        pm = ProfileModel.getInstance();
         usernameLabel.setText(pm.getUsername());
         dateCreated.setText(pm.getDateCreated());
     }    
