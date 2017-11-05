@@ -68,6 +68,10 @@ public class EditUIController implements Initializable {
         pm = ProfileModel.getInstance();
         usernameLabel.setText(pm.getUsername());
         dateCreated.setText(pm.getDateCreated());
+        userInfoField.setText(pm.getUserInfo());
+        favGenreField.setText(pm.getGenres());
+        achievementsField.setText(pm.getGenres());
+        friendsField.setText(pm.getFriends());
     }    
 
     @FXML
