@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author Dylan
  */
-public class ProfileUIController implements Initializable {
+public class EditUIController implements Initializable {
 
     @FXML
     private Button exitButton;
@@ -43,10 +43,12 @@ public class ProfileUIController implements Initializable {
     private Label achievementsLabel;
     @FXML
     private Label friendsLabel;
+    @FXML
+    private Button doneButton;
     private Stage stage;
     private Parent root;
     private Scene scene;
-
+    
     /**
      * Initializes the controller class.
      */
@@ -83,15 +85,8 @@ public class ProfileUIController implements Initializable {
     }
 
     @FXML
-    private void showEditProfileUI(ActionEvent event) {
-        stage = (Stage)usernameLabel.getScene().getWindow();
-        try{
-            root = FXMLLoader.load(getClass().getResource("EditUI.fxml"));
-        } catch(IOException ex){
-            ex.printStackTrace();
-        }
-        stage.setScene(new Scene(root));
-        stage.show();
+    private void updateModel(ActionEvent event) {
+        
     }
     
 }
