@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,7 @@ public class WhatsNext2ElectricBoogaloo extends Application {
         
         Scene scene = new Scene(root);
         stage.setTitle("What's Next?");
+        stage.getIcons().add(new Image("http://2.bp.blogspot.com/_50XFw6_2Jxw/TH0b0U6Fn6I/AAAAAAAAADQ/yK052vx3mAw/s1600/Screen+shot+2010-08-31+at+11.11.46+AM.png"));
         stage.setScene(scene);
         stage.show();
     }
