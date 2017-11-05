@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -48,7 +49,15 @@ public class EditUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
-    
+    private ProfileModel pm;
+    @FXML
+    private TextField userInfoField;
+    @FXML
+    private TextField favGenreField;
+    @FXML
+    private TextField achievementsField;
+    @FXML
+    private TextField friendsField;
     /**
      * Initializes the controller class.
      */
@@ -56,7 +65,7 @@ public class EditUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String username = "username";
         String dateCreate = "dateCreated";
-        ProfileModel pm = new ProfileModel(username, dateCreate);
+        ProfileModel pm = ProfileModel.getInstance();
         usernameLabel.setText(pm.getUsername());
         dateCreated.setText(pm.getDateCreated());
     }    
@@ -86,7 +95,23 @@ public class EditUIController implements Initializable {
 
     @FXML
     private void updateModel(ActionEvent event) {
-        
+        System.out.println("Setting userInfo");
+        pm.setUserInfo(userInfoField.getText());
+        System.out.println("Setting genres");
+        pm.setGenres(favGenreField.getText());
+        System.out.println("Setting achievements");
+        pm.setAchievements(achievementsField.getText());
+        System.out.println("Setting Friends");
+        pm.setFriends(friendsField.getText());
+        stage = (Stage)usernameLabel.getScene().getWindow();
+        try{
+            root = FXMLLoader.load(getClass().getResource("ProfileUI.fxml"));
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

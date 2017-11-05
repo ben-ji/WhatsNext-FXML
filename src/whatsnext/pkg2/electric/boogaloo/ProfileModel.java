@@ -12,21 +12,44 @@ import java.util.ArrayList;
  * @author Dylan
  */
 public class ProfileModel {
-    
+    private static ProfileModel instance = null;
     private String username;
     private String dateCreated;
     private String userInfo;
-    private ArrayList<String> genres;
-    private ArrayList<String> achievements;
-    private ArrayList<String> friends;
+    private String genres;
+    private String achievements;
+    private String friends;
     
-    public ProfileModel(String username, String dateCreated){
+    private ProfileModel(){
+        this.username = "username";
+        this.dateCreated = "dateCreated";
+        this.userInfo = "Hit \"Edit...\" to edit your user info!";
+        this.genres = "";
+        this.achievements = "";
+        this.friends = "";
+    }
+    
+    private ProfileModel(String username, String dateCreated){
         this.username = username;
         this.dateCreated = dateCreated;
         userInfo = "Hit \"Edit...\" to edit your user info!";
-        genres = new ArrayList();
-        achievements = new ArrayList();
-        friends = new ArrayList();
+        this.genres = "";
+        this.achievements = "";
+        this.friends = "";
+    }
+    
+    public static ProfileModel getInstance(){
+        if(instance == null){
+            instance = new ProfileModel();
+        }
+        return instance;
+    }
+    
+    public static ProfileModel getInstance(String username, String dateCreated){
+        if(instance == null){
+            instance = new ProfileModel(username, dateCreated);
+        }
+        return instance;
     }
 
     /**
@@ -74,42 +97,42 @@ public class ProfileModel {
     /**
      * @return the genres
      */
-    public ArrayList<String> getGenres() {
+    public String getGenres() {
         return genres;
     }
 
     /**
      * @param genres the genres to set
      */
-    public void setGenres(ArrayList<String> genres) {
+    public void setGenres(String genres) {
         this.genres = genres;
     }
 
     /**
      * @return the achievements
      */
-    public ArrayList<String> getAchievements() {
+    public String getAchievements() {
         return achievements;
     }
 
     /**
      * @param achievements the achievements to set
      */
-    public void setAchievements(ArrayList<String> achievements) {
+    public void setAchievements(String achievements) {
         this.achievements = achievements;
     }
 
     /**
      * @return the friends
      */
-    public ArrayList<String> getFriends() {
+    public String getFriends() {
         return friends;
     }
 
     /**
      * @param friends the friends to set
      */
-    public void setFriends(ArrayList<String> friends) {
+    public void setFriends(String friends) {
         this.friends = friends;
     }
     

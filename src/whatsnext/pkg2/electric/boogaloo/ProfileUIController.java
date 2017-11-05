@@ -46,6 +46,14 @@ public class ProfileUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
+    @FXML
+    private Label favGenresDisplay;
+    @FXML
+    private Label userInfoDisplay;
+    @FXML
+    private Label achievementsDisplay;
+    @FXML
+    private Label friendsDisplay;
 
     /**
      * Initializes the controller class.
@@ -54,9 +62,13 @@ public class ProfileUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String username = "username";
         String dateCreate = "dateCreated";
-        ProfileModel pm = new ProfileModel(username, dateCreate);
+        ProfileModel pm = ProfileModel.getInstance();
         usernameLabel.setText(pm.getUsername());
         dateCreated.setText(pm.getDateCreated());
+        userInfoDisplay.setText(pm.getUserInfo());
+        favGenresDisplay.setText(pm.getGenres());
+        achievementsDisplay.setText(pm.getAchievements());
+        friendsDisplay.setText(pm.getFriends());
     }    
 
     @FXML
