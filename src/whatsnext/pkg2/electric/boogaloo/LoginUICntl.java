@@ -7,6 +7,9 @@ package whatsnext.pkg2.electric.boogaloo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,11 +43,15 @@ public class LoginUICntl implements Initializable {
     @FXML
     private void authenticate(ActionEvent event) throws IOException{
         //TODO: Professor Haynes says we will be using persistent data later in the course. For this reason, test data will be hardcoded for the login process for the time being.
+        //TODO: In addition, once we use persistent data and will be able to track when a profile is made, the profile's date created will reflect when it was created. For now it will be the current time.
         ul = new UserList();
         ul.add(new User("admin", "password"));
         ul.add(new User("", ""));
         if(checkUsers(ul)){
             stage = (Stage) pf.getScene().getWindow();
+            ProfileModel.getInstance().setUsername(uf.getText());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            ProfileModel.getInstance().setDateCreated(dateFormat.format(new Date()));
             NavCntl controller = new NavCntl(stage);
             
         }
