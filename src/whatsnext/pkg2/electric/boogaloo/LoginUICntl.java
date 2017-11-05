@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -30,6 +32,10 @@ public class LoginUICntl implements Initializable {
     private TextField uf;
     private UserList ul;
     private Stage stage;
+    @FXML
+    private Button SubmitButton;
+    @FXML
+    private Label errorLabel;
     
         private Boolean checkUsers(UserList ul){
         for(int i = 0; i < ul.getUserList().size(); i++){
@@ -56,7 +62,7 @@ public class LoginUICntl implements Initializable {
             
         }
         else{
-            System.out.println("User invalid.");
+            errorLabel.setText("Incorrect Credentials, please try again.");
         }
     }
     
