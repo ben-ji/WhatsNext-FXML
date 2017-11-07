@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whatsnext.pkg2.electric.boogaloo.NavUIController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.NavUIController">
   <children>
     <Label layoutX="14.0" layoutY="9.0" text="What's Next?" textAlignment="LEFT" underline="false" wrapText="false">
       <font>
         <Font size="24.0" />
       </font>
     </Label>
-    <ImageView fitHeight="48.00000762939453" fitWidth="48.00000762939453" layoutX="516.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="524.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../Images/bad-profile-pic-2.jpeg" />
       </image>
     </ImageView>
     <TextField layoutX="409.0" layoutY="14.0" prefHeight="23.0" prefWidth="159.0" promptText="Search..." />
-    <Label layoutX="527.0" layoutY="375.0" text="Profile" textAlignment="CENTER" />
     <ImageView fitHeight="205.0" fitWidth="135.0" layoutX="66.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../Images/Blade_Runner_2049_poster.png" />
@@ -33,8 +37,8 @@
         <Image url="@../../../../Images/Hemingway_poster.jpg" />
       </image>
     </ImageView>
-    <Button id="moviesButton" fx:id="moviesButton" layoutX="282.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Movies" />
-    <Button id="booksButton" fx:id="booksButton" layoutX="348.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Books" />
+    <Button fx:id="moviesButton" layoutX="282.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Movies" />
+    <Button fx:id="booksButton" layoutX="348.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Books" />
     <ImageView fitHeight="205.0" fitWidth="135.0" layoutX="400.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../Images/shawshank_redemption_poster.jpg" />
@@ -45,13 +49,12 @@
         <Font size="16.0" />
       </font>
     </Label>
-    <ScrollBar layoutX="584.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="15.0" />
-    <ImageView fitHeight="37.99998474121094" fitWidth="37.99998474121094" layoutX="23.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="37.99998474121094" fitWidth="55.0" layoutX="30.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../Images/questionmark_icon.jpg" />
       </image>
     </ImageView>
-    <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" text="Options" />
-    <Button id="profileButton" fx:id="profileButton" layoutX="512.0" layoutY="371.0" mnemonicParsing="false" onAction="#showProfile" text="Profile" />
+    <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" prefWidth="70.0" text="Options" />
+    <Button fx:id="profileButton" layoutX="516.0" layoutY="365.0" mnemonicParsing="false" onAction="#showProfile" prefWidth="70.0" text="Profile" />
   </children>
 </AnchorPane>

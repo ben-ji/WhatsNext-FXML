@@ -47,6 +47,7 @@ public class LoginUICntl implements Initializable {
         return false;
     }
         
+    
     @FXML
     private void authenticate(ActionEvent event) throws IOException{
         //TODO: Professor Haynes says we will be using persistent data later in the course. For this reason, test data will be hardcoded for the login process for the time being.

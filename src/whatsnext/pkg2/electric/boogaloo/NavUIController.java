@@ -28,6 +28,7 @@ public class NavUIController implements Initializable {
     private Scene scene;
     private Stage stage;
     private Parent root;
+    
     /**
      * Initializes the controller class.
      */
