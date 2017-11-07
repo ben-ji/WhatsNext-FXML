@@ -37,6 +37,7 @@ public class LoginUICntl implements Initializable {
     @FXML
     private Label errorLabel;
     
+    
         private Boolean checkUsers(UserList ul){
         for(int i = 0; i < ul.getUserList().size(); i++){
             if((uf.getText().equals(ul.get(i).getUsername()))&&(pf.getText().equals(ul.get(i).getPassword()))){
@@ -45,7 +46,7 @@ public class LoginUICntl implements Initializable {
         }
         return false;
     }
-    
+        
     @FXML
     private void authenticate(ActionEvent event) throws IOException{
         //TODO: Professor Haynes says we will be using persistent data later in the course. For this reason, test data will be hardcoded for the login process for the time being.
