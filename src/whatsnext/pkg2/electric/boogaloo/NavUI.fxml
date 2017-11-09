@@ -56,5 +56,6 @@
     </ImageView>
     <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" prefWidth="70.0" text="Options" />
     <Button fx:id="profileButton" layoutX="516.0" layoutY="365.0" mnemonicParsing="false" onAction="#showProfile" prefWidth="70.0" text="Profile" />
+    <Button id="exitProgram" fx:id="logoutButton" layoutX="431.0" layoutY="365.0" mnemonicParsing="false" onAction="#exitProgram" text="Logout" />
   </children>
 </AnchorPane>

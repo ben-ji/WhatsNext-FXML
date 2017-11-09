@@ -8,6 +8,7 @@ package whatsnext.pkg2.electric.boogaloo;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,8 @@ public class NavUIController implements Initializable {
     private Scene scene;
     private Stage stage;
     private Parent root;
+    @FXML
+    private Button logoutButton;
     
     /**
      * Initializes the controller class.
@@ -50,4 +53,8 @@ public class NavUIController implements Initializable {
         stage.show();
     }
     
+    @FXML
+    private void exitProgram(ActionEvent event) {
+        System.exit(0);
+    }
 }
