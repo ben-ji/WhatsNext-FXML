@@ -25,6 +25,7 @@ public class WhatsNext2ElectricBoogaloo extends Application {
         
         Scene scene = new Scene(root);
         stage.setTitle("What's Next?");
+        stage.setResizable(false);
         stage.getIcons().add(new Image("Images/icon.png"));
         stage.setScene(scene);
         stage.show();
