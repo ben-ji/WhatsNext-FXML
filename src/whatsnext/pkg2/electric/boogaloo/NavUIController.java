@@ -43,14 +43,7 @@ public class NavUIController implements Initializable {
     @FXML
     public void showProfile(){
         stage = (Stage)profileButton.getScene().getWindow();
-        try{
-            root = FXMLLoader.load(getClass().getResource("ProfileUI.fxml"));
-        } catch(IOException ex){
-            System.out.println("Error fetching Profile.fxml");
-        }
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        NavCntl.getInstance(stage).showProfile(stage);
     }
     
     @FXML
