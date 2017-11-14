@@ -17,21 +17,23 @@ import javafx.stage.Stage;
  */
 public class NavCntl {
     
-    Stage stage;
+    private static NavCntl instance = null;
     private Parent root;
     private Scene scene;
+    private Stage stage;
     
-    public NavCntl(Stage stage){
+    private NavCntl(Stage stage){
         this.stage = stage;
-        try{
-            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
-        } catch(IOException ex){
-            System.out.println("Error fetching NavUI.fxml");
+    }
+    
+    public NavCntl getInstance(Stage stage){
+        if(this.instance == null){
+            this.instance = new NavCntl(stage);
+            return instance;
         }
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        stage.setResizable(false);
+        else{
+            return instance;
+        }
     }
     
 }

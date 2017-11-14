@@ -13,7 +13,10 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -36,6 +39,9 @@ public class LoginUICntl implements Initializable {
     private Button SubmitButton;
     @FXML
     private Label errorLabel;
+    private Parent root;
+    private Scene scene;
+    
     
     
         private Boolean checkUsers(UserList ul){
@@ -60,7 +66,15 @@ public class LoginUICntl implements Initializable {
             ProfileModel.getInstance().setUsername(uf.getText());
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             ProfileModel.getInstance().setDateCreated(dateFormat.format(new Date()));
-            NavCntl controller = new NavCntl(stage);
+            try{
+                    root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+            } catch(IOException ex){
+                    System.out.println("Error fetching NavUI.fxml");
+            }
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                stage.setResizable(false);
             
         }
         else{
