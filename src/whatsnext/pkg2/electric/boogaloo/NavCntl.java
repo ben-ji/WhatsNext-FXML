@@ -26,14 +26,26 @@ public class NavCntl {
         this.stage = stage;
     }
     
-    public NavCntl getInstance(Stage stage){
-        if(this.instance == null){
-            this.instance = new NavCntl(stage);
+    public static NavCntl getInstance(Stage stage){
+        if(instance == null){
+            instance = new NavCntl(stage);
             return instance;
         }
         else{
             return instance;
         }
+    }
+    
+    public void showProfile(Stage stage){
+        
+        try{
+            root = FXMLLoader.load(getClass().getResource("ProfileUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching Profile.fxml");
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }
