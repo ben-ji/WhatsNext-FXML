@@ -77,11 +77,9 @@ public class ProfileUIController implements Initializable {
         try{
             root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
         } catch(IOException ex){
-            System.out.println("Error fetching NavUI.fxml");
+            ex.printStackTrace();
         }
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        ProfileCntl.getInstance(stage).showNavUI(root);
     }
 
     @FXML
@@ -102,8 +100,7 @@ public class ProfileUIController implements Initializable {
         } catch(IOException ex){
             ex.printStackTrace();
         }
-        stage.setScene(new Scene(root));
-        stage.show();
+        ProfileCntl.getInstance(stage).showEditUI(root);
     }
     
 }
