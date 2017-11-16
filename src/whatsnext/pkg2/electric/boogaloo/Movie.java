@@ -6,17 +6,17 @@
 package whatsnext.pkg2.electric.boogaloo;
 
 import javafx.scene.image.Image;
-
+import javafx.beans.property.SimpleStringProperty;
 /**
  *
  * @author cxg5334
  */
 public class Movie extends Media {
-    private String ageRating;
+    private SimpleStringProperty ageRating = new SimpleStringProperty();
 
-    public Movie(String title, String genre, String description, int length, Image img, String ageRating, int rating) {
+    public Movie(String title, String genre, String description, int length, Image img, String newAgeRating, int rating) {
         super(title, genre, description, length, img, rating);
-        this.ageRating = ageRating;
+        ageRating.set(newAgeRating);
     }
     
     
@@ -25,13 +25,13 @@ public class Movie extends Media {
      * @return the ageRating
      */
     public String getAgeRating() {
-        return ageRating;
+        return ageRating.get();
     }
 
     /**
-     * @param ageRating the ageRating to set
+     * @param newAgeRating
      */
-    public void setAgeRating(String ageRating) {
-        this.ageRating = ageRating;
+    public void setAgeRating(String newAgeRating) {
+        ageRating.set(newAgeRating);
     }
 }

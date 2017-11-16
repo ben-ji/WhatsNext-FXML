@@ -6,23 +6,23 @@
 package whatsnext.pkg2.electric.boogaloo;
 
 import javafx.scene.image.Image;
-
+import javafx.beans.property.SimpleStringProperty;
 /**
  *
  * @author cxg5334
  */
 public abstract class Media {
-    private String title;
-    private String genre;
-    private String description;
+    private SimpleStringProperty title = new SimpleStringProperty();
+    private SimpleStringProperty genre = new SimpleStringProperty();
+    private SimpleStringProperty description = new SimpleStringProperty();
     private int length;
     private Image img;
     private int rating;
     
-    public Media(String title, String genre, String description, int length, Image img, int rating){
-        this.title = title;
-        this.genre = genre;
-        this.description = description;
+    public Media(String newTitle, String newGenre, String newDescription, int length, Image img, int rating){
+        title.set(newTitle);
+        genre.set(newGenre);
+        description.set(newDescription);
         this.length = length;
         this.img = img;
         this.rating = rating;
@@ -32,42 +32,42 @@ public abstract class Media {
      * @return the title
      */
     public String getTitle() {
-        return title;
+        return title.get();
     }
 
     /**
-     * @param title the title to set
+     * @param newTitle
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String newTitle) {
+        title.set(newTitle);
     }
 
     /**
      * @return the genre
      */
     public String getGenre() {
-        return genre;
+        return genre.get();
     }
 
     /**
-     * @param genre the genre to set
+     * @param newGenre
      */
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenre(String newGenre) {
+        genre.set(newGenre);
     }
 
     /**
      * @return the description
      */
     public String getDescription() {
-        return description;
+        return description.get();
     }
 
     /**
-     * @param description the description to set
+     * @param newDescription
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String newDescription) {
+        genre.set(newDescription);
     }
 
     /**
@@ -110,6 +110,27 @@ public abstract class Media {
      */
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(SimpleStringProperty title) {
+        this.title = title;
+    }
+
+    /**
+     * @param genre the genre to set
+     */
+    public void setGenre(SimpleStringProperty genre) {
+        this.genre = genre;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(SimpleStringProperty description) {
+        this.description = description;
     }
     
 }

@@ -6,31 +6,31 @@
 package whatsnext.pkg2.electric.boogaloo;
 
 import javafx.scene.image.Image;
-
+import javafx.beans.property.SimpleStringProperty;
 /**
  *
  * @author cxg5334
  */
 public class Book extends Media{
-    private String author;
+    private SimpleStringProperty author;
     
-    public Book(String title, String genre, String description, int length, Image img, String author, int rating) {
+    public Book(String title, String genre, String description, int length, Image img, String newAuthor, int rating) {
         super(title, genre, description, length, img, rating);
-        this.author = author;
+        author.set(newAuthor);
     }
 
     /**
      * @return the author
      */
     public String getAuthor() {
-        return author;
+        return author.get();
     }
 
     /**
-     * @param author the author to set
+     * @param newAuthor
      */
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String newAuthor) {
+        author.set(newAuthor);
     }
     
 }

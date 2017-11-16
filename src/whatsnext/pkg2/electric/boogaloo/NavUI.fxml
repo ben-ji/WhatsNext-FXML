@@ -27,28 +27,8 @@
       </image>
     </ImageView>
     <TextField layoutX="409.0" layoutY="14.0" prefHeight="23.0" prefWidth="159.0" promptText="Search..." />
-    <ImageView fitHeight="205.0" fitWidth="135.0" layoutX="66.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../../../Images/Blade_Runner_2049_poster.png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="200.04557119140372" fitWidth="131.492878841812" layoutX="233.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../../../Images/Hemingway_poster.jpg" />
-      </image>
-    </ImageView>
     <Button fx:id="moviesButton" layoutX="282.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Movies" />
     <Button fx:id="booksButton" layoutX="348.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" text="Books" />
-    <ImageView fitHeight="205.0" fitWidth="135.0" layoutX="400.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../../../Images/shawshank_redemption_poster.jpg" />
-      </image>
-    </ImageView>
-    <Label layoutX="206.0" layoutY="72.0" text="Popular Movies and Books">
-      <font>
-        <Font size="16.0" />
-      </font>
-    </Label>
     <ImageView fitHeight="37.99998474121094" fitWidth="55.0" layoutX="30.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../Images/questionmark_icon.jpg" />
@@ -57,5 +37,11 @@
     <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" prefWidth="70.0" text="Options" />
     <Button fx:id="profileButton" layoutX="516.0" layoutY="365.0" mnemonicParsing="false" onAction="#showProfile" prefWidth="70.0" text="Profile" />
     <Button id="exitProgram" fx:id="logoutButton" layoutX="431.0" layoutY="365.0" mnemonicParsing="false" onAction="#exitProgram" text="Logout" />
+    <ImageView fitHeight="171.38972282409668" fitWidth="305.0" layoutX="148.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../../../../../Images/whatsnext_logo.jpg" />
+      </image>
+    </ImageView>
+    <Button layoutX="272.0" layoutY="366.0" mnemonicParsing="false" text="Search" />
   </children>
 </AnchorPane>
