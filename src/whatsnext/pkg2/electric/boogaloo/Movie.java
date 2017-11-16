@@ -5,6 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.beans.property.SimpleStringProperty;
 /**
@@ -14,8 +15,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Movie extends Media {
     private SimpleStringProperty ageRating = new SimpleStringProperty();
 
-    public Movie(String title, String genre, String description, int length, Image img, String newAgeRating, int rating) {
-        super(title, genre, description, length, img, rating);
+    public Movie(String title, ArrayList<SimpleStringProperty> genres, String description, int length, Image img, String newAgeRating, int rating) {
+        super(title, genres, description, length, img, rating);
         ageRating.set(newAgeRating);
     }
     

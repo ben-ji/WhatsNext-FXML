@@ -7,7 +7,9 @@ package whatsnext.pkg2.electric.boogaloo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -83,7 +85,18 @@ public class SearchUIController implements Initializable {
 
     @FXML
     private void search(ActionEvent event) {
+        //Constructing Dummy Data
+        ArrayList<Media> mediaList = new ArrayList<Media>();
+        ArrayList<SimpleStringProperty> genres = new ArrayList<SimpleStringProperty>();
+        String tempTitle;
+        ArrayList<SimpleStringProperty> tempGenres = new ArrayList<SimpleStringProperty>();
         
+        for(int i = 0; i < 20; i ++){
+            tempTitle = "Book" + i;
+            tempGenres.add(genres.get(i % 6));
+            tempGenres.add(genres.get(i+i%6));
+            //mediaList.add(new Book(tempTitle,tempGenres));
+        }
     }
     
 }

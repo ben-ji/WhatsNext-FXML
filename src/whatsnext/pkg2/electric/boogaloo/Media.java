@@ -5,6 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.beans.property.SimpleStringProperty;
 /**
@@ -13,15 +14,15 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public abstract class Media {
     private SimpleStringProperty title = new SimpleStringProperty();
-    private SimpleStringProperty genre = new SimpleStringProperty();
+    private ArrayList<SimpleStringProperty> genres;
     private SimpleStringProperty description = new SimpleStringProperty();
     private int length;
     private Image img;
     private int rating;
     
-    public Media(String newTitle, String newGenre, String newDescription, int length, Image img, int rating){
-        title.set(newTitle);
-        genre.set(newGenre);
+    public Media(String newTitle, ArrayList<SimpleStringProperty> genres, String newDescription, int length, Image img, int rating){
+        this.title.set(newTitle);
+        this.genres = genres;
         description.set(newDescription);
         this.length = length;
         this.img = img;
@@ -45,15 +46,15 @@ public abstract class Media {
     /**
      * @return the genre
      */
-    public String getGenre() {
-        return genre.get();
+    public ArrayList<SimpleStringProperty> getGenre() {
+        return genres;
     }
 
     /**
      * @param newGenre
      */
-    public void setGenre(String newGenre) {
-        genre.set(newGenre);
+    public void setGenres(ArrayList<SimpleStringProperty> genres) {
+        this.genres = genres;
     }
 
     /**
@@ -67,7 +68,7 @@ public abstract class Media {
      * @param newDescription
      */
     public void setDescription(String newDescription) {
-        genre.set(newDescription);
+        this.description.set(newDescription);
     }
 
     /**
@@ -119,12 +120,6 @@ public abstract class Media {
         this.title = title;
     }
 
-    /**
-     * @param genre the genre to set
-     */
-    public void setGenre(SimpleStringProperty genre) {
-        this.genre = genre;
-    }
 
     /**
      * @param description the description to set

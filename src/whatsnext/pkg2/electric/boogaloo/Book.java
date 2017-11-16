@@ -5,6 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.beans.property.SimpleStringProperty;
 /**
@@ -14,8 +15,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Book extends Media{
     private SimpleStringProperty author;
     
-    public Book(String title, String genre, String description, int length, Image img, String newAuthor, int rating) {
-        super(title, genre, description, length, img, rating);
+    public Book(String title, ArrayList<SimpleStringProperty> genres, String description, int length, Image img, String newAuthor, int rating) {
+        super(title, genres, description, length, img, rating);
         author.set(newAuthor);
     }
 
