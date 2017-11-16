@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package whatsnext.pkg2.electric.boogaloo;
-
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,36 +12,33 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author daw5510
+ * @author Benjamin
  */
-public class ProfileCntl {
+public class SearchCntl {
     
     private static Parent root;
-    private static ProfileCntl instance;
+    private static SearchCntl instance;
     private static Stage stage;
-    private ProfileModel pm;
+    private SearchModel sm;
     
-    private ProfileCntl(Stage stage){
+    public SearchCntl(Stage stage) {
         this.stage = stage;
-        this.pm = ProfileModel.getInstance();
+        this.sm = SearchModel.getInstance();
     }
     
-    public static ProfileCntl getInstance(Stage stage){
+   
+    public static SearchCntl getInstance(Stage stage1){
         if(instance == null){
-            instance = new ProfileCntl(stage);
+            instance = new SearchCntl(stage1);
         }
             return instance;
         
-    }
-    
-    public static void showEditUI(Parent root){
-        stage.setScene(new Scene(root));
-        stage.show();
     }
     
     public static void showNavUI(Parent root){
         stage.setScene(new Scene(root));
         stage.show();
     }
-    
+
 }
+

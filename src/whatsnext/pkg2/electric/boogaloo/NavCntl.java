@@ -41,7 +41,19 @@ public class NavCntl {
         try{
             root = FXMLLoader.load(getClass().getResource("ProfileUI.fxml"));
         } catch(IOException ex){
-            System.out.println("Error fetching Profile.fxml");
+            System.out.println("Error fetching ProfileUI.fxml");
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void showSearch(Stage stage){
+        
+        try{
+            root = FXMLLoader.load(getClass().getResource("SearchUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching SearchUI.fxml");
         }
         scene = new Scene(root);
         stage.setScene(scene);

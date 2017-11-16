@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.SearchUIController">
+  <children>
+    <Label layoutX="207.0" layoutY="14.0" prefHeight="17.0" text="Search by Genre">
+      <font>
+        <Font size="26.0" />
+      </font>
+    </Label>
+    <Button layoutX="266.0" layoutY="345.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="69.0" text="Search" />
+    <TitledPane animated="false" collapsible="false" disable="false" expanded="true" layoutX="21.0" layoutY="82.0" prefHeight="250.0" prefWidth="250.0" text="Positive Filter">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="225.0" prefWidth="275.0">
+          <children>
+            <CheckBox layoutX="165.0" layoutY="14.0" mnemonicParsing="false" text="Cartoon" />
+            <CheckBox layoutX="165.0" layoutY="191.0" mnemonicParsing="false" text="Documentary" />
+            <CheckBox layoutX="165.0" layoutY="103.0" mnemonicParsing="false" text="Comedy" />
+            <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Horror" />
+            <CheckBox layoutX="14.0" layoutY="103.0" mnemonicParsing="false" text="Romance" />
+            <CheckBox layoutX="14.0" layoutY="191.0" mnemonicParsing="false" text="Thriller" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+    <TitledPane animated="false" collapsible="false" disable="false" expanded="true" layoutX="300.0" layoutY="82.0" prefHeight="250.0" prefWidth="250.0" text="Negative Filter">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="225.0" prefWidth="275.0">
+          <children>
+            <CheckBox layoutX="165.0" layoutY="14.0" mnemonicParsing="false" text="Cartoon" />
+            <CheckBox layoutX="165.0" layoutY="191.0" mnemonicParsing="false" text="Documentary" />
+            <CheckBox layoutX="165.0" layoutY="103.0" mnemonicParsing="false" text="Comedy" />
+            <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Horror" />
+            <CheckBox layoutX="14.0" layoutY="103.0" mnemonicParsing="false" text="Romance" />
+            <CheckBox layoutX="14.0" layoutY="191.0" mnemonicParsing="false" text="Thriller" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+    <CheckBox layoutX="388.0" layoutY="355.0" mnemonicParsing="false" text="Incognito Mode" />
+    <Button fx:id="exitButton" layoutX="149.0" layoutY="352.0" mnemonicParsing="false" onAction="#showNavUI" text="Exit" />
+  </children>
+</AnchorPane>

@@ -20,20 +20,17 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Dylan
+ * @author Benjamin
  */
-public class NavUIController implements Initializable {
+public class SearchUIController implements Initializable {
 
     @FXML
-    private Button profileButton;
-    private Scene scene;
+    private Button exitButton;
     private Stage stage;
     private Parent root;
-    @FXML
-    private Button logoutButton;
-    @FXML
-    private Button menuSearchButton;
+    private Scene scene;
     
+
     /**
      * Initializes the controller class.
      */
@@ -41,21 +38,16 @@ public class NavUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
-    public void showProfile(){
-        stage = (Stage)profileButton.getScene().getWindow();
-        NavCntl.getInstance(stage).showProfile(stage);
+    private void showNavUI(ActionEvent event) {
+        stage = (Stage)exitButton.getScene().getWindow();
+        try{
+            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        SearchCntl.getInstance(stage).showNavUI(root);
     }
     
-    @FXML
-    private void exitProgram(ActionEvent event) {
-        System.exit(0);
-    }
-    
-    @FXML
-    public void showSearch(){
-        stage = (Stage)menuSearchButton.getScene().getWindow();
-        NavCntl.getInstance(stage).showSearch(stage);
-    }
 }
