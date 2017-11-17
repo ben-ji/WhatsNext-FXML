@@ -15,8 +15,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Movie extends Media {
     private SimpleStringProperty ageRating = new SimpleStringProperty();
 
-    public Movie(String title, ArrayList<SimpleStringProperty> genres, String description, int length, Image img, String newAgeRating, int rating) {
-        super(title, genres, description, length, img, rating);
+    public Movie(String title,String genre1, String genre2, String description, int length, Image img, String newAgeRating, int rating) {
+        super(title, genre1, genre2, description, length, img, rating);
         ageRating.set(newAgeRating);
     }
     

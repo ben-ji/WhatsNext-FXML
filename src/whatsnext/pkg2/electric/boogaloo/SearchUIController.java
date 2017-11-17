@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -87,16 +88,23 @@ public class SearchUIController implements Initializable {
     private void search(ActionEvent event) {
         //Constructing Dummy Data
         ArrayList<Media> mediaList = new ArrayList<Media>();
-        ArrayList<SimpleStringProperty> genres = new ArrayList<SimpleStringProperty>();
+        ArrayList<String> genres = new ArrayList<String>();
+        genres.add("Horror");
+        genres.add("Cartoon");
+        genres.add("Romance");
+        genres.add("Comedy");
+        genres.add("Thriller");
+        genres.add("Documentary");
         String tempTitle;
-        ArrayList<SimpleStringProperty> tempGenres = new ArrayList<SimpleStringProperty>();
-        
+        String tempGenre1;
+        String tempGenre2; 
+        Image tempImage = new Image("Images/icon.png");
         for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get(i % 6);
+            tempGenre2 = genres.get((i*i)%6);
             tempTitle = "Book" + i;
-            tempGenres.add(genres.get(i % 6));
-            tempGenres.add(genres.get(i+i%6));
-            //mediaList.add(new Book(tempTitle,tempGenres));
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, tempImage, "author", 10));
+            System.out.println(tempTitle + ", " + tempGenre1 + " & " + tempGenre2);
         }
     }
-    
 }
