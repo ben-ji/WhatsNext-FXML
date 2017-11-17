@@ -7,7 +7,10 @@ package whatsnext.pkg2.electric.boogaloo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -46,7 +50,16 @@ public class ResultUIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ArrayList<Media> al = ResultCntl.getMediaList();
+        ObservableList<Media> listOfMedia = FXCollections.observableArrayList();
+        for(Media m : al){
+            listOfMedia.add(m);
+        }
+        titleColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("title"));
+        genreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre1"));
+        subGenreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre2"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("description"));
+        resultsTable.setItems(listOfMedia);
     }    
     
     @FXML
@@ -57,6 +70,6 @@ public class ResultUIController implements Initializable {
         } catch(IOException ex){
             ex.printStackTrace();
         }
-        ResultController.getInstance(stage).showSearchUI(root, stage);
+//        ResultCntl.getInstance(stage).showSearchUI(root, stage);
     }
 }

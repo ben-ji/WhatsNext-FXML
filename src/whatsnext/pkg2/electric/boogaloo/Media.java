@@ -117,8 +117,8 @@ public abstract class Media {
     /**
      * @return the genre1
      */
-    public SimpleStringProperty getGenre1() {
-        return genre1;
+    public String getGenre1() {
+        return genre1.get();
     }
 
     /**
@@ -131,8 +131,8 @@ public abstract class Media {
     /**
      * @return the genre2
      */
-    public SimpleStringProperty getGenre2() {
-        return genre2;
+    public String getGenre2() {
+        return genre2.get();
     }
 
     /**

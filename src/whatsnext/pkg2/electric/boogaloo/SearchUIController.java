@@ -159,7 +159,7 @@ public class SearchUIController implements Initializable {
         //Getting Positive Results
         for(Media m : mediaList){
             for(String pos : positives){
-                if(m.getGenre1().get().equalsIgnoreCase(pos) || m.getGenre2().get().equalsIgnoreCase(pos)){
+                if(m.getGenre1().equalsIgnoreCase(pos) || m.getGenre2().equalsIgnoreCase(pos)){
                     positiveList.add(m);
                 }
             }
@@ -167,7 +167,7 @@ public class SearchUIController implements Initializable {
         //Getting Negative Results     
         for(Media m : mediaList){
             for(String neg : negatives){
-                if(m.getGenre1().get().equalsIgnoreCase(neg) || m.getGenre2().get().equalsIgnoreCase(neg)){
+                if(m.getGenre1().equalsIgnoreCase(neg) || m.getGenre2().equalsIgnoreCase(neg)){
                     negativeList.add(m);
                 }
             }
@@ -177,21 +177,22 @@ public class SearchUIController implements Initializable {
             if(!negativeList.contains(p))
                 resultsList.add(p);
         }
-        
-        
-        System.out.println("Positive List:");
-        for(Media m: positiveList){
-            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-        }
-        
-        System.out.println("Negative List:");
-        for(Media m: negativeList){
-            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-        }
-        System.out.println("Results List");
-        for(Media m: resultsList){
-            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-        }
+        ResultCntl.getInstance(stage);
+        ResultCntl.setMediaList(resultsList);
+//        Print Statements for data debugging:
+//        System.out.println("Positive List:");
+//        for(Media m: positiveList){
+//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+//        }
+//        
+//        System.out.println("Negative List:");
+//        for(Media m: negativeList){
+//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+//        }
+//        System.out.println("Results List");
+//        for(Media m: resultsList){
+//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+//        }
         
         //Writing to history if not in incognito mode:
         if(incognitoButton.isSelected())
