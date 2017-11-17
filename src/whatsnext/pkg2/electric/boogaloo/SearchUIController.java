@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -87,6 +88,9 @@ public class SearchUIController implements Initializable {
     @FXML
     private void search(ActionEvent event) {
         ArrayList<Media> mediaList = new ArrayList<Media>();
+        ArrayList<Media> resultsList = new ArrayList<Media>();
+        ArrayList<Media> positiveList = new ArrayList<Media>();
+        ArrayList<Media> negativeList = new ArrayList<Media>();
         //Constructing Dummy Data
         ArrayList<String> genres = new ArrayList<String>();
         genres.add("Horror");
@@ -101,8 +105,8 @@ public class SearchUIController implements Initializable {
         Image tempImage = new Image("Images/icon.png");
         Stage stage = (Stage)searchButton.getScene().getWindow();
         for(int i = 0; i < 20; i ++){
-            tempGenre1 = genres.get(i % 6);
-            tempGenre2 = genres.get((i*i)%6);
+            tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
             tempTitle = "Book" + (i+1);
             mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, tempImage, "author", 10));
             System.out.println(tempTitle + ", " + tempGenre1 + " & " + tempGenre2);
@@ -141,19 +145,57 @@ public class SearchUIController implements Initializable {
             }
         }
         
-        //Applying Positive Filter
-        for(int i = 0; i < mediaList.size(); i ++){
-            for(int j = 0; j < positives.size(); j++){
-                if((mediaList.get(i).getGenre1().getName().equalsIgnoreCase(positives.get(j)))||(mediaList.get(i).getGenre2().getName().equalsIgnoreCase(positives.get(j)))){
-                    System.out.println(mediaList.get(i)); 
-                }
-            }        
+        System.out.println("Pos Filters: ");
+        for(String p:positives){
+            System.out.println(p);
         }
+        System.out.println("Neg Filters: ");
+        for(String n:negatives){
+            System.out.println(n);
+        }
+        
+        //Getting Positive Results
+        for(Media m : mediaList){
+            for(String pos : positives){
+                if(m.getGenre1().get().equalsIgnoreCase(pos) || m.getGenre2().get().equalsIgnoreCase(pos)){
+                    positiveList.add(m);
+                }
+            }
+        }
+        //Getting Negative Results     
+        for(Media m : mediaList){
+            for(String neg : negatives){
+                if(m.getGenre1().get().equalsIgnoreCase(neg) || m.getGenre2().get().equalsIgnoreCase(neg)){
+                    negativeList.add(m);
+                }
+            }
+        }
+        //Combining Positive and Negative Lists to results
+        for(Media p : positiveList){
+            if(!negativeList.contains(p))
+                resultsList.add(p);
+        }
+        
+        
+        System.out.println("Positive List:");
+        for(Media m: positiveList){
+            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+        }
+        
+        System.out.println("Negative List:");
+        for(Media m: negativeList){
+            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+        }
+        System.out.println("Results List");
+        for(Media m: resultsList){
+            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
+        }
+        
         try{
             root = FXMLLoader.load(getClass().getResource("ResultUI.fxml"));
         } catch(IOException ex){
             ex.printStackTrace();
         }
-        SearchCntl.getInstance(stage).showResultUI(root,mediaList);
+        SearchCntl.getInstance(stage).showResultUI(root,resultsList);
     }
 }
