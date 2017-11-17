@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +31,16 @@ public class ResultUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
+    @FXML
+    private TableView<Media> resultsTable;
+    @FXML
+    private TableColumn<Media, String> titleColumn;
+    @FXML
+    private TableColumn<Media, String> genreColumn;
+    @FXML
+    private TableColumn<Media, String> subGenreColumn;
+    @FXML
+    private TableColumn<Media, String> descriptionColumn;
     /**
      * Initializes the controller class.
      */
