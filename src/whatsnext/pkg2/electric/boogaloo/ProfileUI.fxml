@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.ProfileUIController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="325.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.ProfileUIController">
   <children>
     <ImageView fitHeight="84.0" fitWidth="112.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="Images/bad-profile-pic-2.jpeg" />
       </image>
     </ImageView>
-    <Button fx:id="exitButton" layoutX="524.0" layoutY="365.0" mnemonicParsing="false" onAction="#showNavUI" prefWidth="62.0" text="Exit" />
-    <Button fx:id="logoutButton" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitProgram" text="Logout" textFill="#a12929" />
+    <Button fx:id="exitButton" layoutX="248.0" layoutY="365.0" mnemonicParsing="false" onAction="#showNavUI" prefWidth="62.0" text="Exit" />
+    <Button fx:id="logoutButton" layoutX="252.0" layoutY="17.0" mnemonicParsing="false" onAction="#exitProgram" text="Logout" textFill="#a12929" />
     <Button fx:id="optionsButton" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#showOptionsUI" text="Options" />
     <Label fx:id="usernameLabel" layoutX="151.0" layoutY="27.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
     <Label layoutX="151.0" layoutY="56.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:" />
@@ -32,7 +32,7 @@
     <Label fx:id="userInfoDisplay" layoutX="113.0" layoutY="121.0" text="Label" textAlignment="LEFT" />
     <Label fx:id="achievementsDisplay" layoutX="113.0" layoutY="171.0" text="Label" textAlignment="LEFT" />
     <Label fx:id="friendsDisplay" layoutX="113.0" layoutY="196.0" text="Label" textAlignment="LEFT" />
-    <Button layoutX="252.0" layoutY="286.0" mnemonicParsing="false" text="History" />
+    <Button fx:id="historyButton" layoutX="252.0" layoutY="286.0" mnemonicParsing="false" onAction="#showHistoryUI" text="History" />
     <Label layoutX="14.0" layoutY="288.0" text="Look through your past searches here --&gt;" />
   </children>
 </AnchorPane>

@@ -32,6 +32,8 @@ public class ProfileUIController implements Initializable {
     @FXML
     private Button optionsButton;
     @FXML
+    private Button historyButton;
+    @FXML
     private Label usernameLabel;
     @FXML
     private Label dateCreated;
@@ -101,6 +103,17 @@ public class ProfileUIController implements Initializable {
             ex.printStackTrace();
         }
         ProfileCntl.getInstance(stage).showEditUI(root);
+    }
+    
+    @FXML
+    private void showHistoryUI(ActionEvent event) {
+        stage = (Stage)historyButton.getScene().getWindow();
+        try{
+            root = FXMLLoader.load(getClass().getResource("HistoryUI.fxml"));
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        ProfileCntl.getInstance(stage).showHistoryUI(root);
     }
     
 }

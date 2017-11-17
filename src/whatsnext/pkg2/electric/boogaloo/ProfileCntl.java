@@ -45,4 +45,8 @@ public class ProfileCntl {
         stage.show();
     }
     
+    public static void showHistoryUI(Parent root){
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
