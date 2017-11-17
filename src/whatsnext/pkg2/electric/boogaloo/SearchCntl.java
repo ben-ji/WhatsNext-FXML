@@ -5,6 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -38,6 +39,10 @@ public class SearchCntl {
     public static void showNavUI(Parent root){
         stage.setScene(new Scene(root));
         stage.show();
+    }
+    
+    public static void showResultsUI(Stage stage, ArrayList<Media> mediaList){
+        
     }
 
 }
