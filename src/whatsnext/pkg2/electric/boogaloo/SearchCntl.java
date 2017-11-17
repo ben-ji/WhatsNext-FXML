@@ -46,6 +46,10 @@ public class SearchCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    
+    public static void writeToHistory(ArrayList<Media> mediaList){
+        //HistoryCntl.recordHistory(mediaList);
+    }
 
 }
 

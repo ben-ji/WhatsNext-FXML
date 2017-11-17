@@ -63,6 +63,8 @@ public class SearchUIController implements Initializable {
     @FXML
     private CheckBox negThriller;
     private ObservableList<Media> mediaList;
+    @FXML
+    private CheckBox incognitoButton;
     
 
     /**
@@ -190,6 +192,10 @@ public class SearchUIController implements Initializable {
         for(Media m: resultsList){
             System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
         }
+        
+        //Writing to history if not in incognito mode:
+        if(incognitoButton.isSelected())
+            SearchCntl.writeToHistory(resultsList);
         
         try{
             root = FXMLLoader.load(getClass().getResource("ResultUI.fxml"));
