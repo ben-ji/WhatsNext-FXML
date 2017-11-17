@@ -174,7 +174,7 @@ public class SearchUIController implements Initializable {
         }
         //Combining Positive and Negative Lists to results
         for(Media p : positiveList){
-            if(!negativeList.contains(p))
+            if((!negativeList.contains(p))&&(!resultsList.contains(p)))
                 resultsList.add(p);
         }
         ResultCntl.getInstance(stage);

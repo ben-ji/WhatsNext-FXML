@@ -5,6 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,9 +18,10 @@ public class HistoryCntl {
     private static Parent root;
     private static Stage stage;
     private static HistoryCntl instance;
+    private static ObservableList<Media> listOfMediaHistory;
     
     
-    public HistoryCntl(Stage stage) {
+    private HistoryCntl(Stage stage) {
         this.stage = stage;
         
     }
