@@ -86,8 +86,8 @@ public class SearchUIController implements Initializable {
 
     @FXML
     private void search(ActionEvent event) {
-        //Constructing Dummy Data
         ArrayList<Media> mediaList = new ArrayList<Media>();
+        //Constructing Dummy Data
         ArrayList<String> genres = new ArrayList<String>();
         genres.add("Horror");
         genres.add("Cartoon");
@@ -114,6 +114,46 @@ public class SearchUIController implements Initializable {
             mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"description",99, tempImage, "rating", 10));
             System.out.println(tempTitle + ", " + tempGenre1 + " & " + tempGenre2);
         }
-        SearchCntl.showResultsUI(stage, mediaList);
+        
+        //Determining what filters to use
+        ArrayList<String> positives = new ArrayList<String>();
+        ArrayList<String> negatives = new ArrayList<String>();
+        ArrayList<CheckBox> posButtons = new ArrayList<CheckBox>();
+        ArrayList<CheckBox> negButtons = new ArrayList<CheckBox>();
+        posButtons.add(posHorror);
+        posButtons.add(posCartoon);
+        posButtons.add(posRomance);
+        posButtons.add(posComedy);
+        posButtons.add(posThriller);
+        posButtons.add(posDocumentary);
+        negButtons.add(negHorror);
+        negButtons.add(negCartoon);
+        negButtons.add(negRomance);
+        negButtons.add(negComedy);
+        negButtons.add(negThriller);
+        negButtons.add(negDocumentary);
+        for(int i = 0; i < 6; i++){
+            if(posButtons.get(i).isSelected()){
+                positives.add(posButtons.get(i).getText());
+            }
+            if(negButtons.get(i).isSelected()){
+                negatives.add(negButtons.get(i).getText());
+            }
+        }
+        
+        //Applying Positive Filter
+        for(int i = 0; i < mediaList.size(); i ++){
+            for(int j = 0; j < positives.size(); j++){
+                if((mediaList.get(i).getGenre1().getName().equalsIgnoreCase(positives.get(j)))||(mediaList.get(i).getGenre2().getName().equalsIgnoreCase(positives.get(j)))){
+                    System.out.println(mediaList.get(i)); 
+                }
+            }        
+        }
+        try{
+            root = FXMLLoader.load(getClass().getResource("ResultUI.fxml"));
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        SearchCntl.getInstance(stage).showResultUI(root,mediaList);
     }
 }

@@ -41,8 +41,10 @@ public class SearchCntl {
         stage.show();
     }
     
-    public static void showResultsUI(Stage stage, ArrayList<Media> mediaList){
-        
+    public static void showResultUI(Parent root, ArrayList<Media> mediaList){
+        ResultController.setMediaList(mediaList);
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }
