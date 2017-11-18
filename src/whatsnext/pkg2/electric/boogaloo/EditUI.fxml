@@ -19,7 +19,7 @@
         <Image url="Images/bad-profile-pic-2.jpeg" />
       </image>
     </ImageView>
-    <Button fx:id="exitButton" layoutX="249.0" layoutY="361.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" prefWidth="62.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Cancel" />
+    <Button fx:id="exitButton" layoutX="187.0" layoutY="361.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" prefWidth="123.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Exit to Main Menu" />
     <Label fx:id="usernameLabel" layoutX="151.0" layoutY="27.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
     <Label layoutX="151.0" layoutY="56.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:">
       <font>

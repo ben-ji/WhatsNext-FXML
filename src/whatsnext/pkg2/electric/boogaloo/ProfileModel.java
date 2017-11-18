@@ -23,7 +23,7 @@ public class ProfileModel {
     private ProfileModel(){
         this.username = "username";
         this.dateCreated = "dateCreated";
-        this.userInfo = "Hit \"Edit...\" to edit your user info!";
+        this.userInfo = "Hit \"Edit User Info\" button to edit your user info!";
         this.genres = "";
         this.achievements = "";
         this.friends = "";
