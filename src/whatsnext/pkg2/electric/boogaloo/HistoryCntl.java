@@ -57,5 +57,8 @@ public class HistoryCntl {
             mediaList.add(m);
         }
     }
+    public static void clearMediaList(){
+        mediaList.clear();
+    }
 
 }
