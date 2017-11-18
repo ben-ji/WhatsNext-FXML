@@ -45,6 +45,10 @@ public class ResultUIController implements Initializable {
     private TableColumn<Media, String> subGenreColumn;
     @FXML
     private TableColumn<Media, String> descriptionColumn;
+    @FXML
+    private Button removeButton;
+    @FXML
+    private Button clearAllButton;
     /**
      * Initializes the controller class.
      */
