@@ -65,6 +65,7 @@ public class HistoryUIController implements Initializable{
         resultsTable.setItems(listOfMediaHistory);
     }    
     
+    @FXML
     private void showProfileUI(ActionEvent event){
         stage= (Stage)returnButton.getScene().getWindow();
         try {
