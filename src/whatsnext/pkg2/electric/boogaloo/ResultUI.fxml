@@ -16,13 +16,13 @@
   <children>
     <AnchorPane id="AnchorPane" layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
       <children>
-        <Button fx:id="returnButton" layoutX="84.0" layoutY="344.0" mnemonicParsing="false" onAction="#showSearchUI" text="Return" />
-        <Button fx:id="selectResultButton" layoutX="404.0" layoutY="344.0" mnemonicParsing="false" onAction="#getSelectedRow" text="Get/Open Selection" />
-        <ScrollPane layoutX="58.0" layoutY="44.0" prefHeight="245.0" prefWidth="485.0">
+        <Button fx:id="returnButton" layoutX="443.0" layoutY="361.0" mnemonicParsing="false" onAction="#showSearchUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Search Menu" />
+        <Button fx:id="selectResultButton" layoutX="225.0" layoutY="361.0" mnemonicParsing="false" onAction="#getSelectedRow" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Send Selection to History" />
+        <ScrollPane layoutX="58.0" layoutY="54.0" prefHeight="293.0" prefWidth="485.0">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
               <children>
-                <TableView fx:id="resultsTable" layoutX="0.0" layoutY="0.0" prefHeight="245.0" prefWidth="485.0">
+                <TableView fx:id="resultsTable" layoutX="0.0" layoutY="0.0" prefHeight="293.0" prefWidth="485.0">
                   <columns>
                     <TableColumn prefWidth="75.0" text="Title" fx:id="titleColumn" />
                     <TableColumn prefWidth="99.0" text="Genre" fx:id="genreColumn" />
@@ -34,9 +34,9 @@
             </AnchorPane>
           </content>
         </ScrollPane>
-        <Label layoutX="221.0" layoutY="10.0" text="Search Results">
+        <Label layoutX="220.0" layoutY="14.0" text="Search Results">
           <font>
-            <Font size="25.0" />
+            <Font name="Georgia" size="25.0" />
           </font>
         </Label>
       </children>

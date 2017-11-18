@@ -9,30 +9,42 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="325.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.ProfileUIController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.ProfileUIController">
   <children>
-    <ImageView fitHeight="84.0" fitWidth="112.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="131.3037751166921" fitWidth="106.93812561035156" layoutX="247.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="Images/bad-profile-pic-2.jpeg" />
       </image>
     </ImageView>
-    <Button fx:id="exitButton" layoutX="248.0" layoutY="365.0" mnemonicParsing="false" onAction="#showNavUI" prefWidth="62.0" text="Exit" />
-    <Button fx:id="logoutButton" layoutX="252.0" layoutY="17.0" mnemonicParsing="false" onAction="#exitProgram" text="Logout" textFill="#a12929" />
-    <Button fx:id="optionsButton" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#showOptionsUI" text="Options" />
-    <Label fx:id="usernameLabel" layoutX="151.0" layoutY="27.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
-    <Label layoutX="151.0" layoutY="56.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:" />
-    <Label fx:id="dateCreated" layoutX="151.0" layoutY="73.0" prefHeight="17.0" prefWidth="75.0" text="ERROR ERROR" />
-    <Label fx:id="userInfoLabel" layoutX="14.0" layoutY="117.0" prefHeight="25.0" prefWidth="265.0" text="User Info:" textAlignment="LEFT" />
-    <Label fx:id="favGenreLabel" layoutX="15.0" layoutY="145.0" text="Favorite Genres: " textAlignment="LEFT" />
-    <Label fx:id="achievementsLabel" layoutX="16.0" layoutY="171.0" text="Achievements:" textAlignment="LEFT" />
-    <Label fx:id="friendsLabel" layoutX="15.0" layoutY="196.0" text="Friends: " textAlignment="LEFT" />
-    <Button layoutX="95.0" layoutY="365.0" mnemonicParsing="false" onAction="#showEditProfileUI" text="Edit Info" />
-    <Label fx:id="favGenresDisplay" layoutX="113.0" layoutY="145.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="userInfoDisplay" layoutX="113.0" layoutY="121.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="achievementsDisplay" layoutX="113.0" layoutY="171.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="friendsDisplay" layoutX="113.0" layoutY="196.0" text="Label" textAlignment="LEFT" />
-    <Button fx:id="historyButton" layoutX="252.0" layoutY="286.0" mnemonicParsing="false" onAction="#showHistoryUI" text="History" />
-    <Label layoutX="14.0" layoutY="288.0" text="Look through your past searches here --&gt;" />
+    <Button fx:id="exitButton" layoutX="452.0" layoutY="361.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" prefWidth="135.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Main Menu" />
+    <Button fx:id="logoutButton" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: red;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Logout" textFill="#a12929" />
+    <Label fx:id="usernameLabel" layoutX="259.0" layoutY="132.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
+    <Label layoutX="257.0" layoutY="161.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:">
+      <font>
+        <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <Label fx:id="dateCreated" layoutX="257.0" layoutY="178.0" prefHeight="17.0" prefWidth="75.0" text="ERROR ERROR" />
+    <Label fx:id="userInfoLabel" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="265.0" text="Bio:" textAlignment="LEFT">
+      <font>
+        <Font name="Trebuchet MS Bold" size="12.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label fx:id="favGenreLabel" font="$x1" layoutX="14.0" layoutY="267.0" text="Preferred Genres:" textAlignment="LEFT" />
+    <Label fx:id="achievementsLabel" font="$x1" layoutX="14.0" layoutY="291.0" text="Achievements:" textAlignment="LEFT" />
+    <Label fx:id="friendsLabel" font="$x1" layoutX="14.0" layoutY="316.0" text="Friends: " textAlignment="LEFT" />
+    <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#showEditProfileUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Edit User Info" />
+    <Label fx:id="favGenresDisplay" layoutX="130.0" layoutY="266.0" text="Label" textAlignment="LEFT" />
+    <Label fx:id="userInfoDisplay" layoutX="130.0" layoutY="241.0" text="Label" textAlignment="LEFT" />
+    <Label fx:id="achievementsDisplay" layoutX="130.0" layoutY="290.0" text="Label" textAlignment="LEFT" />
+    <Label fx:id="friendsDisplay" layoutX="130.0" layoutY="315.0" text="Label" textAlignment="LEFT" />
+    <Button fx:id="historyButton" layoutX="263.0" layoutY="361.0" mnemonicParsing="false" onAction="#showHistoryUI" prefHeight="25.0" prefWidth="75.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="History" />
+    <Label layoutX="233.0" layoutY="14.0" text="Your Profile">
+      <font>
+        <Font name="Georgia" size="25.0" />
+      </font>
+    </Label>
   </children>
 </AnchorPane>
