@@ -73,7 +73,8 @@ public class ResultUIController implements Initializable {
         } catch(IOException ex){
             ex.printStackTrace();
         }
-//        ResultCntl.getInstance(stage).showSearchUI(root, stage);
+        ResultCntl.getInstance(stage).showSearchUI(root, stage);
+        
     }
     
     @FXML
