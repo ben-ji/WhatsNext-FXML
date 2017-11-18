@@ -195,8 +195,10 @@ public class SearchUIController implements Initializable {
 //        }
         
         //Writing to history if not in incognito mode:
-        if(incognitoButton.isSelected())
+        if(!incognitoButton.isSelected()){
+            SearchCntl.getInstance(stage);
             SearchCntl.writeToHistory(resultsList);
+        }
         
         try{
             root = FXMLLoader.load(getClass().getResource("ResultUI.fxml"));

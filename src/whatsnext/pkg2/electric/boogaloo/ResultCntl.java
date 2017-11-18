@@ -6,6 +6,8 @@
 package whatsnext.pkg2.electric.boogaloo;
 
 import java.util.ArrayList;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -41,6 +43,11 @@ public class ResultCntl {
      */
     public static void setMediaList(ArrayList<Media> aMediaList) {
         mediaList = aMediaList;
+    }
+    
+    public static void showSearchUI(Parent root, Stage stage){
+        stage.setScene(new Scene(root));
+        stage.show();
     }
     
 }

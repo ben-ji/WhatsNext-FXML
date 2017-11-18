@@ -5,6 +5,8 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,12 +20,12 @@ public class HistoryCntl {
     private static Parent root;
     private static Stage stage;
     private static HistoryCntl instance;
-    private static ObservableList<Media> listOfMediaHistory;
+    private static ArrayList<Media> mediaList;
+
     
     
     private HistoryCntl(Stage stage) {
         this.stage = stage;
-        
     }
         
     
@@ -38,4 +40,19 @@ public class HistoryCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    /**
+     * @return the mediaList
+     */
+    public static ArrayList<Media> getMediaList() {
+        return mediaList;
+    }
+
+    /**
+     * @param aMediaList the mediaList to set
+     */
+    public static void setMediaList(ArrayList<Media> aMediaList) {
+        mediaList = aMediaList;
+    }
+
 }

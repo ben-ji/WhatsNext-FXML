@@ -45,10 +45,9 @@ public class ResultUIController implements Initializable {
     private TableColumn<Media, String> subGenreColumn;
     @FXML
     private TableColumn<Media, String> descriptionColumn;
+    
     @FXML
-    private Button removeButton;
-    @FXML
-    private Button clearAllButton;
+    private Button selectResultButton;
     /**
      * Initializes the controller class.
      */
@@ -74,6 +73,13 @@ public class ResultUIController implements Initializable {
         } catch(IOException ex){
             ex.printStackTrace();
         }
-//        ResultCntl.getInstance(stage).showSearchUI(root, stage);
+        ResultCntl.getInstance(stage).showSearchUI(root, stage);
+        
+    }
+    
+    @FXML
+    public void getSelectedRow(){
+        Media tempMedia = resultsTable.getSelectionModel().getSelectedItem();
+        System.out.println(tempMedia.getTitle());
     }
 }
