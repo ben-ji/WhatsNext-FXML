@@ -80,6 +80,9 @@ public class ResultUIController implements Initializable {
     @FXML
     public void getSelectedRow(){
         Media tempMedia = resultsTable.getSelectionModel().getSelectedItem();
-        System.out.println(tempMedia.getTitle());
+        ArrayList<Media> tempList = new ArrayList<Media>();
+        tempList.add(tempMedia);
+        HistoryCntl.getInstance(stage);
+        HistoryCntl.addToMediaList(tempList);
     }
 }

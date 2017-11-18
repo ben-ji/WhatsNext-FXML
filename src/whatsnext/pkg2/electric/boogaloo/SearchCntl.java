@@ -48,7 +48,8 @@ public class SearchCntl {
     }
     
     public static void writeToHistory(ArrayList<Media> mediaList){
-        HistoryCntl.setMediaList(mediaList);
+        HistoryCntl.getInstance(stage);
+        HistoryCntl.addToMediaList(mediaList);
     }
 
 }
