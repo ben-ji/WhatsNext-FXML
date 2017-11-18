@@ -26,6 +26,7 @@ public class HistoryCntl {
     
     private HistoryCntl(Stage stage) {
         this.stage = stage;
+        mediaList = new ArrayList<Media>();
     }
         
     

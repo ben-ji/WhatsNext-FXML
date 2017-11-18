@@ -54,6 +54,7 @@ public class HistoryUIController implements Initializable{
         if(listOfMediaHistory == null){
             listOfMediaHistory = FXCollections.observableArrayList();
         }
+        HistoryCntl.getInstance(stage);
         for(Media m : HistoryCntl.getMediaList()){
             listOfMediaHistory.add(m);
         }
