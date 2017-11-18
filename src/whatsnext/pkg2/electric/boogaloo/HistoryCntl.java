@@ -52,8 +52,10 @@ public class HistoryCntl {
     /**
      * @param aMediaList the mediaList to set
      */
-    public static void setMediaList(ArrayList<Media> aMediaList) {
-        mediaList = aMediaList;
+    public static void addToMediaList(ArrayList<Media> aMediaList) {
+        for(Media m : aMediaList){
+            mediaList.add(m);
+        }
     }
 
 }
