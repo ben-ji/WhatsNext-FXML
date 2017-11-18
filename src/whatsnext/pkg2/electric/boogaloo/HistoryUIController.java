@@ -77,7 +77,14 @@ public class HistoryUIController implements Initializable{
     }
 
     @FXML
-    private void showSearchUI(ActionEvent event) {
+    private void removeSelectedMedia(ActionEvent event) {
+        Media tempMedia = resultsTable.getSelectionModel().getSelectedItem();
+        listOfMediaHistory.remove(tempMedia);
+    }
+
+    @FXML
+    private void clearAllHistory(ActionEvent event) {
+        listOfMediaHistory.clear();
     }
     
 }
