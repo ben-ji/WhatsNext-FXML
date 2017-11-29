@@ -7,55 +7,28 @@ package whatsnext.pkg2.electric.boogaloo;
 
 import java.util.ArrayList;
 import javafx.scene.image.Image;
-import javafx.beans.property.SimpleStringProperty;
 /**
  *
  * @author cxg5334
  */
 public abstract class Media {
-    private SimpleStringProperty title = new SimpleStringProperty();
-    private SimpleStringProperty genre1 = new SimpleStringProperty();
-    private SimpleStringProperty genre2 = new SimpleStringProperty();
-    private SimpleStringProperty description = new SimpleStringProperty();
+    private String title;
+    private String genre1;
+    private String genre2;
+    private String description;
     private int length;
     private Image img;
     private int rating;
     
     public Media(String title, String genre1, String genre2, String description, int length, Image img, int rating){
-        this.title.set(title);
-        this.genre1.set(genre1);
-        this.genre2.set(genre2);
-        this.description.set(description);
+        this.title = title;
+        this.genre1 = genre1;
+        this.genre2 = genre2;
+        this.description=description;
         this.length = length;
         this.img = img;
         this.rating = rating;
     }
-
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-        return title.get();
-    }
-
-    /**
-     * @param newTitle
-     */
-
-    /**
-     * @return the genre
-     */
-
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description.get();
-    }
-
-    /**
-     * @param newDescription
-     */
 
     /**
      * @return the length
@@ -100,31 +73,30 @@ public abstract class Media {
     }
 
     /**
-     * @param title the title to set
+     * @return the title
      */
-    public void setTitle(SimpleStringProperty title) {
-        this.title = title;
+    public String getTitle() {
+        return title;
     }
 
-
     /**
-     * @param description the description to set
+     * @param title the title to set
      */
-    public void setDescription(SimpleStringProperty description) {
-        this.description = description;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
      * @return the genre1
      */
     public String getGenre1() {
-        return genre1.get();
+        return genre1;
     }
 
     /**
      * @param genre1 the genre1 to set
      */
-    public void setGenre1(SimpleStringProperty genre1) {
+    public void setGenre1(String genre1) {
         this.genre1 = genre1;
     }
 
@@ -132,15 +104,29 @@ public abstract class Media {
      * @return the genre2
      */
     public String getGenre2() {
-        return genre2.get();
+        return genre2;
     }
 
     /**
      * @param genre2 the genre2 to set
      */
-    public void setGenre2(SimpleStringProperty genre2) {
+    public void setGenre2(String genre2) {
         this.genre2 = genre2;
     }
-    
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
+
 
