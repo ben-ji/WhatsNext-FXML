@@ -5,9 +5,12 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -20,13 +23,14 @@ public class HistoryCntl {
     private static Parent root;
     private static Stage stage;
     private static HistoryCntl instance;
-    private static ArrayList<Media> mediaList;
+    private static ArrayList<Media> mediaList = new ArrayList<Media>();
+    private static String mediaListFileName = "mediaList.ser";
 
     
     
     private HistoryCntl(Stage stage) {
         this.stage = stage;
-        mediaList = new ArrayList<Media>();
+        this.readMediaListFile();
     }
         
     
@@ -56,9 +60,45 @@ public class HistoryCntl {
         for(Media m : aMediaList){
             mediaList.add(m);
         }
+        HistoryCntl.writeMediaListFile();
     }
     public static void clearMediaList(){
         mediaList.clear();
+        HistoryCntl.writeMediaListFile();
+    }
+
+    private void readMediaListFile() {
+        FileInputStream fis = null;
+        ObjectInputStream in = null;
+        try{
+            fis = new FileInputStream(mediaListFileName);
+            in = new ObjectInputStream(fis);
+            mediaList = (ArrayList<Media>)in.readObject();
+            in.close();
+            if(!mediaList.isEmpty()){
+                System.out.println("MediaList has content!");
+            }           
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        catch(ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static void writeMediaListFile() {
+        FileOutputStream fos = null;
+        ObjectOutputStream out = null;
+        try {
+            fos = new FileOutputStream(mediaListFileName);
+            out = new ObjectOutputStream(fos);
+            out.writeObject(mediaList);
+            out.close();
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }
