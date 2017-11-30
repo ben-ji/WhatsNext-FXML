@@ -90,6 +90,7 @@ public class HistoryUIController implements Initializable{
     @FXML
     private void clearAllHistory(ActionEvent event) {
         listOfMediaHistory.clear();
+        HistoryCntl.updateMediaListFile();
     }
     
 }

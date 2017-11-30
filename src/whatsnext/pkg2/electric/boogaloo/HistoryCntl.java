@@ -64,6 +64,9 @@ public class HistoryCntl {
     }
     public static void clearMediaList(){
         mediaList.clear();
+    }
+    
+    public static void updateMediaListFile(){
         HistoryCntl.writeMediaListFile();
     }
 
