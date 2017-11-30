@@ -17,7 +17,6 @@ public abstract class Media implements Serializable{
     private String genre2;
     private String description;
     private int length;
-    private Image img;
     private int rating;
     
     public Media(String title, String genre1, String genre2, String description, int length, int rating){
