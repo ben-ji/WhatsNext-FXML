@@ -103,21 +103,18 @@ public class SearchUIController implements Initializable {
         String tempTitle;
         String tempGenre1;
         String tempGenre2; 
-        Image tempImage = new Image("Images/icon.png");
         Stage stage = (Stage)searchButton.getScene().getWindow();
         for(int i = 0; i < 20; i ++){
             tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
             tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
             tempTitle = "Book" + (i+1);
-            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, tempImage, "author", 10));
-            System.out.println(tempTitle + ", " + tempGenre1 + " & " + tempGenre2);
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, "author", 10));
         }
         for(int i = 0; i < 20; i ++){
             tempGenre1 = genres.get((i+2) % 6);
             tempGenre2 = genres.get(((i+2)*i)%6);
             tempTitle = "Movie" + (i+1);
-            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"description",99, tempImage, "rating", 10));
-            System.out.println(tempTitle + ", " + tempGenre1 + " & " + tempGenre2);
+            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"description",99, "rating", 10));
         }
         
         //Determining what filters to use
@@ -146,14 +143,6 @@ public class SearchUIController implements Initializable {
             }
         }
         
-        System.out.println("Pos Filters: ");
-        for(String p:positives){
-            System.out.println(p);
-        }
-        System.out.println("Neg Filters: ");
-        for(String n:negatives){
-            System.out.println(n);
-        }
         
         //Getting Positive Results
         for(Media m : mediaList){
@@ -178,21 +167,7 @@ public class SearchUIController implements Initializable {
         }
         ResultCntl.getInstance(stage);
         ResultCntl.setMediaList(resultsList);
-//        Print Statements for data debugging:
-//        System.out.println("Positive List:");
-//        for(Media m: positiveList){
-//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-//        }
-//        
-//        System.out.println("Negative List:");
-//        for(Media m: negativeList){
-//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-//        }
-//        System.out.println("Results List");
-//        for(Media m: resultsList){
-//            System.out.println(m.getTitle() + ": " + m.getGenre1().get() + " + " + m.getGenre2().get());
-//        }
-        
+
         //Writing to history if not in incognito mode:
         if(!incognitoButton.isSelected()){
             SearchCntl.getInstance(stage);

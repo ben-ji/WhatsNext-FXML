@@ -5,16 +5,17 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.Serializable;
 import javafx.scene.image.Image;
 /**
  *
  * @author cxg5334
  */
-public class Movie extends Media {
+public class Movie extends Media implements Serializable{
     private String ageRating;
 
-    public Movie(String title,String genre1, String genre2, String description, int length, Image img, String newAgeRating, int rating) {
-        super(title, genre1, genre2, description, length, img, rating);
+    public Movie(String title,String genre1, String genre2, String description, int length, String newAgeRating, int rating) {
+        super(title, genre1, genre2, description, length, rating);
         ageRating=newAgeRating;
     }
 

@@ -5,13 +5,13 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import javafx.scene.image.Image;
 /**
  *
  * @author cxg5334
  */
-public abstract class Media {
+public abstract class Media implements Serializable{
     private String title;
     private String genre1;
     private String genre2;
@@ -20,13 +20,12 @@ public abstract class Media {
     private Image img;
     private int rating;
     
-    public Media(String title, String genre1, String genre2, String description, int length, Image img, int rating){
+    public Media(String title, String genre1, String genre2, String description, int length, int rating){
         this.title = title;
         this.genre1 = genre1;
         this.genre2 = genre2;
         this.description=description;
         this.length = length;
-        this.img = img;
         this.rating = rating;
     }
 
@@ -44,19 +43,7 @@ public abstract class Media {
         this.length = length;
     }
 
-    /**
-     * @return the img
-     */
-    public Image getImg() {
-        return img;
-    }
 
-    /**
-     * @param img the img to set
-     */
-    public void setImg(Image img) {
-        this.img = img;
-    }
 
     /**
      * @return the rating

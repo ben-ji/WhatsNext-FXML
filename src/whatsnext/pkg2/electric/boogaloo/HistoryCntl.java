@@ -90,6 +90,7 @@ public class HistoryCntl {
     private static void writeMediaListFile() {
         FileOutputStream fos = null;
         ObjectOutputStream out = null;
+        System.out.println(mediaList);
         try {
             fos = new FileOutputStream(mediaListFileName);
             out = new ObjectOutputStream(fos);

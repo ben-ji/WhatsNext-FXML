@@ -5,16 +5,17 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.Serializable;
 import javafx.scene.image.Image;
 /**
  *
  * @author cxg5334
  */
-public class Book extends Media{
+public class Book extends Media implements Serializable{
     private String author;
     
-    public Book(String title, String genre1, String genre2, String description, int length, Image image, String author, int rating) {
-        super(title, genre1, genre2, description, length, image, rating);
+    public Book(String title, String genre1, String genre2, String description, int length, String author, int rating) {
+        super(title, genre1, genre2, description, length, rating);
         this.author = author;
     }
 
