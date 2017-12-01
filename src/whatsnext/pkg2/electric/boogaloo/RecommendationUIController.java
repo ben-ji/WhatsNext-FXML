@@ -5,9 +5,13 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,12 +47,33 @@ public class RecommendationUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
+    private ArrayList<Media> mediaList = new ArrayList<Media>();
+    private ObservableList<Media> observableMediaList;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        FileInputStream fis = null;
+        ObjectInputStream in = null;
+        try{
+            fis = new FileInputStream("mediaList.ser");
+            in = new ObjectInputStream(fis);
+            mediaList = (ArrayList<Media>)in.readObject();
+            in.close();
+            if(!mediaList.isEmpty()){
+                System.out.println("historyList has content!");
+            }           
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        catch(ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        for(Media m : mediaList){
+            System.out.println(m.getTitle());
+        }
     }    
     @FXML
     private void showNavUI(ActionEvent event) {
@@ -61,5 +86,7 @@ public class RecommendationUIController implements Initializable {
         RecommendationCntl.getInstance(stage).showNavUI(root, stage);
         
     }
+
+
     
 }
