@@ -85,6 +85,7 @@ public class HistoryUIController implements Initializable{
                 break;
             }   
         }
+        HistoryCntl.updateMediaListFile();
     }
 
     @FXML

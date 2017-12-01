@@ -23,7 +23,7 @@ public class HistoryCntl {
     private static Parent root;
     private static Stage stage;
     private static HistoryCntl instance;
-    private static ArrayList<Media> mediaList = new ArrayList<Media>();
+    private static ArrayList<Media> mediaList;
     private static String mediaListFileName = "mediaList.ser";
 
     
@@ -62,6 +62,11 @@ public class HistoryCntl {
         }
         HistoryCntl.writeMediaListFile();
     }
+    
+    public static void removeByIndex(int index){
+        mediaList.remove(index);
+    }
+    
     public static void clearMediaList(){
         mediaList.clear();
     }
