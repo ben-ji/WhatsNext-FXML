@@ -49,6 +49,12 @@ public class RecommendationUIController implements Initializable {
     private Scene scene;
     private ArrayList<Media> mediaList = new ArrayList<Media>();
     private ObservableList<Media> observableMediaList;
+    private int horror = 0;
+    private int cartoon = 0;
+    private int romance = 0;
+    private int comedy = 0;
+    private int thriller = 0;
+    private int documentary = 0;
     /**
      * Initializes the controller class.
      */
@@ -74,6 +80,7 @@ public class RecommendationUIController implements Initializable {
         for(Media m : mediaList){
             System.out.println(m.getTitle());
         }
+        tallyGenres(mediaList);
     }    
     @FXML
     private void showNavUI(ActionEvent event) {
@@ -85,6 +92,53 @@ public class RecommendationUIController implements Initializable {
         }
         RecommendationCntl.getInstance(stage).showNavUI(root, stage);
         
+    }
+
+    private void tallyGenres(ArrayList<Media> mediaList) {
+        for(Media m : mediaList){
+            switch(m.getGenre1()){
+                case "Horror":
+                    horror+= 2;
+                    break;
+                case "Cartoon":
+                    cartoon+= 2;
+                    break;
+                case "Romance":
+                    romance+= 2;
+                    break;
+                case "Comedy":
+                    comedy+= 2;
+                    break;
+                case "Thriller":
+                    thriller+= 2;
+                case "Documentary":
+                    documentary+= 2;
+            }
+            switch(m.getGenre2()){
+                case "Horror":
+                    horror++;
+                    break;
+                case "Cartoon":
+                    cartoon++;
+                    break;
+                case "Romance":
+                    romance++;
+                    break;
+                case "Comedy":
+                    comedy++;
+                    break;
+                case "Thriller":
+                    thriller++;
+                case "Documentary":
+                    documentary++;
+            }
+        }
+        System.out.println(horror);
+        System.out.println(cartoon);
+        System.out.println(romance);
+        System.out.println(comedy);
+        System.out.println(thriller);
+        System.out.println(documentary);
     }
 
 
