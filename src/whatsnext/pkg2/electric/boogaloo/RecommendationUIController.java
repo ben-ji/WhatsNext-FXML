@@ -11,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,27 +48,35 @@ public class RecommendationUIController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
-    private ArrayList<Media> mediaList = new ArrayList<Media>();
+    private ArrayList<Media> historyList = new ArrayList<Media>();
     private ObservableList<Media> observableMediaList;
-    private int horror = 0;
-    private int cartoon = 0;
-    private int romance = 0;
-    private int comedy = 0;
-    private int thriller = 0;
-    private int documentary = 0;
+    private ArrayList<Integer> intList = new ArrayList<Integer>();
+    private ArrayList<String> genreList = new ArrayList<String>();
+    private ArrayList<Media> mediaList = new ArrayList<Media>();
+    private String primaryGenre;
+    private String secondaryGenre;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        for(int i = 0; i < 6; i ++){
+            intList.add(0);
+        }
+        genreList.add("Horror");
+        genreList.add("Cartoon");
+        genreList.add("Romance");
+        genreList.add("Comedy");
+        genreList.add("Thriller");
+        genreList.add("Documentary");
         FileInputStream fis = null;
         ObjectInputStream in = null;
         try{
             fis = new FileInputStream("mediaList.ser");
             in = new ObjectInputStream(fis);
-            mediaList = (ArrayList<Media>)in.readObject();
+            historyList = (ArrayList<Media>)in.readObject();
             in.close();
-            if(!mediaList.isEmpty()){
+            if(!historyList.isEmpty()){
                 System.out.println("historyList has content!");
             }           
         }
@@ -77,10 +86,13 @@ public class RecommendationUIController implements Initializable {
         catch(ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-        for(Media m : mediaList){
+        for(Media m : historyList){
             System.out.println(m.getTitle());
         }
-        tallyGenres(mediaList);
+        tallyGenres(historyList);
+        primaryGenre = popHighestGenre();
+        secondaryGenre = popHighestGenre();
+        search(primaryGenre, secondaryGenre);
     }    
     @FXML
     private void showNavUI(ActionEvent event) {
@@ -95,6 +107,12 @@ public class RecommendationUIController implements Initializable {
     }
 
     private void tallyGenres(ArrayList<Media> mediaList) {
+        int horror = 0;
+        int cartoon = 0;
+        int romance = 0;
+        int comedy = 0;
+        int thriller = 0;
+        int documentary = 0;
         for(Media m : mediaList){
             switch(m.getGenre1()){
                 case "Horror":
@@ -131,14 +149,80 @@ public class RecommendationUIController implements Initializable {
                     thriller++;
                 case "Documentary":
                     documentary++;
-            }
+            }    
         }
+        intList.set(0, horror);
+        intList.set(1, cartoon);
+        intList.set(2, romance);
+        intList.set(3, comedy);
+        intList.set(4, thriller);
+        intList.set(5, documentary);
         System.out.println(horror);
         System.out.println(cartoon);
         System.out.println(romance);
         System.out.println(comedy);
         System.out.println(thriller);
         System.out.println(documentary);
+    }
+
+    private String popHighestGenre() {
+        int hiIndex = 0;
+        int hiNum = 0;
+        String topGenre;
+        for(int i = 0; i < intList.size(); i++){
+            if(hiNum < intList.get(i)){
+                hiNum = intList.get(i);
+                hiIndex = i;
+            }
+        }
+        topGenre = genreList.get(hiIndex);
+        genreList.remove(hiIndex);
+        intList.remove(hiIndex);
+        return topGenre;
+    }
+
+    private ArrayList<Media> search(String primaryGenre, String secondaryGenre) {
+        ArrayList<Media> returnList = new ArrayList<Media>();
+        ArrayList<String> filters = new ArrayList<String>();
+        filters.add(primaryGenre);
+        filters.add(secondaryGenre);
+        
+        //Constructing Dummy Data
+        ArrayList<String> genres = new ArrayList<String>();
+        genres.add("Horror");
+        genres.add("Cartoon");
+        genres.add("Romance");
+        genres.add("Comedy");
+        genres.add("Thriller");
+        genres.add("Documentary");
+        String tempTitle;
+        String tempGenre1;
+        String tempGenre2; 
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempTitle = "New Book" + (i+1);
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"We think you'll love this Book!",99, "author", 10));
+        }
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get((i+2) % 6);
+            tempGenre2 = genres.get(((i+2)*i)%6);
+            tempTitle = "New Movie" + (i+1);
+            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"We think you'll love this movie",99, "rating", 10));
+        }
+        
+        for(Media m : mediaList){
+            for(String f : filters){
+                if(m.getGenre1().equalsIgnoreCase(f) || m.getGenre2().equalsIgnoreCase(f)){
+                    returnList.add(m);
+                    break;
+                }
+            }
+        }
+        for(Media m : returnList){
+            System.out.println(m.getTitle() + " " + m.getGenre1() + " " + m.getGenre2());
+        }
+        return returnList;
     }
 
 
