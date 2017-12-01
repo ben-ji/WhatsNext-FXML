@@ -59,5 +59,15 @@ public class NavCntl {
         stage.setScene(scene);
         stage.show();
     }
-    
+    public void showRecommendation(Stage stage){
+        
+        try{
+            root = FXMLLoader.load(getClass().getResource("RecommendationUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching RecommendationUI.fxml");
+        }
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

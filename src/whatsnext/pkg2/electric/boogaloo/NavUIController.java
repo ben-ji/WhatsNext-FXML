@@ -33,6 +33,8 @@ public class NavUIController implements Initializable {
     private Button logoutButton;
     @FXML
     private Button menuSearchButton;
+    @FXML
+    private Button recommendationButton;
     
     /**
      * Initializes the controller class.
@@ -57,5 +59,10 @@ public class NavUIController implements Initializable {
     public void showSearch(){
         stage = (Stage)menuSearchButton.getScene().getWindow();
         NavCntl.getInstance(stage).showSearch(stage);
+    }
+    @FXML
+    public void showRecommendation(){
+        stage = (Stage)recommendationButton.getScene().getWindow();
+        NavCntl.getInstance(stage).showRecommendation(stage);
     }
 }
