@@ -63,6 +63,7 @@ public class NavUIController implements Initializable {
     @FXML
     public void showRecommendation(){
         stage = (Stage)recommendationButton.getScene().getWindow();
+       
         NavCntl.getInstance(stage).showRecommendation(stage);
     }
 }

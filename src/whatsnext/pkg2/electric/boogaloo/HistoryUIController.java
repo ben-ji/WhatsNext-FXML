@@ -85,6 +85,7 @@ public class HistoryUIController implements Initializable{
                 break;
             }   
         }
+        System.out.println(listOfMediaHistory);
         HistoryCntl.writeMediaListFile();
     }
 
