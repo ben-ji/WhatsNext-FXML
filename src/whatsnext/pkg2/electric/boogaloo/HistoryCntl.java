@@ -24,7 +24,7 @@ public class HistoryCntl {
     private static Stage stage;
     private static HistoryCntl instance;
     private static ArrayList<Media> mediaList;
-    private static String mediaListFileName = "mediaList.ser";
+    private static final String MEDIALISTFILENAME = "mediaList.ser";
 
     
     
@@ -71,15 +71,13 @@ public class HistoryCntl {
         mediaList.clear();
     }
     
-    public static void updateMediaListFile(){
-        HistoryCntl.writeMediaListFile();
-    }
 
-    private void readMediaListFile() {
+
+    private static void readMediaListFile() {
         FileInputStream fis = null;
         ObjectInputStream in = null;
         try{
-            fis = new FileInputStream(mediaListFileName);
+            fis = new FileInputStream(MEDIALISTFILENAME);
             in = new ObjectInputStream(fis);
             mediaList = (ArrayList<Media>)in.readObject();
             in.close();
@@ -95,12 +93,12 @@ public class HistoryCntl {
         }
     }
 
-    private static void writeMediaListFile() {
+    public static void writeMediaListFile() {
         FileOutputStream fos = null;
         ObjectOutputStream out = null;
         System.out.println(mediaList);
         try {
-            fos = new FileOutputStream(mediaListFileName);
+            fos = new FileOutputStream(MEDIALISTFILENAME);
             out = new ObjectOutputStream(fos);
             out.writeObject(mediaList);
             out.close();

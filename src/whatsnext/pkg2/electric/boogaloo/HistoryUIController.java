@@ -85,13 +85,13 @@ public class HistoryUIController implements Initializable{
                 break;
             }   
         }
-        HistoryCntl.updateMediaListFile();
+        HistoryCntl.writeMediaListFile();
     }
 
     @FXML
     private void clearAllHistory(ActionEvent event) {
         listOfMediaHistory.clear();
-        HistoryCntl.updateMediaListFile();
+        HistoryCntl.writeMediaListFile();
     }
     
 }
