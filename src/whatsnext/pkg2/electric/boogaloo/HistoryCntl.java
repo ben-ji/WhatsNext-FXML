@@ -69,11 +69,12 @@ public class HistoryCntl {
     
     public static void clearMediaList(){
         mediaList.clear();
+        HistoryCntl.writeMediaListFile();
     }
     
 
 
-    private static void readMediaListFile() {
+    public static void readMediaListFile() {
         FileInputStream fis = null;
         ObjectInputStream in = null;
         try{

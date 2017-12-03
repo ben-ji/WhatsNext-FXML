@@ -57,7 +57,7 @@ public class HistoryUIController implements Initializable{
         for(Media m : HistoryCntl.getMediaList()){
             listOfMediaHistory.add(m);
         }
-        HistoryCntl.clearMediaList();
+        HistoryCntl.readMediaListFile();
         titleColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("title"));
         genreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre1"));
         subGenreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre2"));
@@ -86,13 +86,13 @@ public class HistoryUIController implements Initializable{
             }   
         }
         System.out.println(listOfMediaHistory);
-        HistoryCntl.writeMediaListFile();
+        HistoryCntl.clearMediaList();
     }
 
     @FXML
     private void clearAllHistory(ActionEvent event) {
         listOfMediaHistory.clear();
-        HistoryCntl.writeMediaListFile();
+        HistoryCntl.clearMediaList();
     }
     
 }
