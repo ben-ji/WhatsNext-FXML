@@ -77,6 +77,12 @@ public class HistoryCntl {
         HistoryCntl.writeMediaListFile();
     }
     
+    public static void clearMediaList(Boolean write){
+        mediaList.clear();
+        if(write)
+            HistoryCntl.writeMediaListFile();
+    }
+    
 
 
     public static void readMediaListFile() {

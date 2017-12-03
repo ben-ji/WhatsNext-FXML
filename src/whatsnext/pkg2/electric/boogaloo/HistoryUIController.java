@@ -48,7 +48,7 @@ public class HistoryUIController implements Initializable{
     private TableColumn<Media, String> descriptionColumn;
     @FXML
     private Button clearAllButton;
-    private static ObservableList<Media> listOfMediaHistory;
+    private ObservableList<Media> listOfMediaHistory;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -57,8 +57,10 @@ public class HistoryUIController implements Initializable{
         }
         HistoryCntl.getInstance(stage);
         for(Media m : HistoryCntl.getMediaList()){
-            listOfMediaHistory.add(m);
+            if(!listOfMediaHistory.contains(m))
+                listOfMediaHistory.add(m);
         }
+        HistoryCntl.clearMediaList(false);
         HistoryCntl.readMediaListFile();
         titleColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("title"));
         genreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre1"));
