@@ -35,6 +35,8 @@ public class HistoryUIController implements Initializable{
     @FXML
     private Button removeButton;
     @FXML
+    private Button exitButton;
+    @FXML
     private TableView<Media> resultsTable;
     @FXML
     private TableColumn<Media, String> titleColumn;
@@ -74,6 +76,17 @@ public class HistoryUIController implements Initializable{
             ex.printStackTrace();
         }
         HistoryCntl.getInstance(stage).showProfileUI(root, stage);
+    }
+    
+    @FXML
+    private void showNavUI(ActionEvent event){
+        stage= (Stage)exitButton.getScene().getWindow();
+        try {
+            root = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+        HistoryCntl.getInstance(stage).showNavUI(root, stage);
     }
 
     @FXML

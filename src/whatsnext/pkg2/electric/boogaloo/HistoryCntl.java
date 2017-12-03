@@ -45,6 +45,11 @@ public class HistoryCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    
+    public static void showNavUI(Parent root, Stage stage){
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 
     /**
      * @return the mediaList

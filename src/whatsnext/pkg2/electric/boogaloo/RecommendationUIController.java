@@ -194,13 +194,13 @@ public class RecommendationUIController implements Initializable {
             tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
             tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
             tempTitle = "New Book" + (i+1);
-            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"We think you'll love this Book!",99, "author", 10));
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"We think you'll love this book!",99, "author", 10));
         }
         for(int i = 0; i < 20; i ++){
             tempGenre1 = genres.get((i+2) % 6);
             tempGenre2 = genres.get(((i+2)*i)%6);
             tempTitle = "New Movie" + (i+1);
-            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"We think you'll love this movie",99, "rating", 10));
+            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"We think you'll love this movie!",99, "rating", 10));
         }
         
         for(Media m : mediaList){
