@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +62,9 @@ public class RecommendationUIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if(observableMediaList == null){
+            observableMediaList = FXCollections.observableArrayList();
+        }
         for(int i = 0; i < 6; i ++){
             intList.add(0);
         }
@@ -91,7 +95,10 @@ public class RecommendationUIController implements Initializable {
         subGenreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre2"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("description"));
         resultsTable.setItems(observableMediaList);
-        search(primaryGenre,secondaryGenre);
+        for(Media m : search(primaryGenre,secondaryGenre)){
+            this.observableMediaList.add(m);
+        }
+        
      }    
     @FXML
     private void showNavUI(ActionEvent event) {
@@ -148,12 +155,6 @@ public class RecommendationUIController implements Initializable {
         intList.set(3, comedy);
         intList.set(4, thriller);
         intList.set(5, documentary);
-        System.out.println(horror);
-        System.out.println(cartoon);
-        System.out.println(romance);
-        System.out.println(comedy);
-        System.out.println(thriller);
-        System.out.println(documentary);
     }
 
     private String popHighestGenre() {
@@ -209,9 +210,6 @@ public class RecommendationUIController implements Initializable {
                     break;
                 }
             }
-        }
-        for(Media m : returnList){
-            System.out.println(m.getTitle() + " " + m.getGenre1() + " " + m.getGenre2());
         }
         return returnList;
     }
