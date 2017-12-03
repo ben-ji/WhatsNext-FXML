@@ -68,4 +68,14 @@ public class NavCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    
+    public void showHistory(Stage stage){
+        try{
+            root = FXMLLoader.load(getClass().getResource("HistoryUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching HistoryUI.fxml");
+        }
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
