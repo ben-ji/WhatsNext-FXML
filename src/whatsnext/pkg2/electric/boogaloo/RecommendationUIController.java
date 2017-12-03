@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -32,15 +33,15 @@ import javafx.stage.Stage;
 public class RecommendationUIController implements Initializable {
 
     @FXML
-    private TableView<?> resultsTable;
+    private TableView<Media> resultsTable;
     @FXML
-    private TableColumn<?, ?> titleColumn;
+    private TableColumn<Media, String> titleColumn;
     @FXML
-    private TableColumn<?, ?> genreColumn;
+    private TableColumn<Media, String> genreColumn;
     @FXML
-    private TableColumn<?, ?> subGenreColumn;
+    private TableColumn<Media, String> subGenreColumn;
     @FXML
-    private TableColumn<?, ?> descriptionColumn;
+    private TableColumn<Media, String> descriptionColumn;
     @FXML
     private Button exitButton;
     @FXML
@@ -80,20 +81,18 @@ public class RecommendationUIController implements Initializable {
                 System.out.println("historyList has content!");
             }           
         }
-        catch(IOException ex) {
-            ex.printStackTrace();
-        }
-        catch(ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        for(Media m : historyList){
-            System.out.println(m.getTitle());
-        }
+        catch(IOException ex) {}
+        catch(ClassNotFoundException e){}
         tallyGenres(historyList);
         primaryGenre = popHighestGenre();
         secondaryGenre = popHighestGenre();
-        search(primaryGenre, secondaryGenre);
-    }    
+        titleColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("title"));
+        genreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre1"));
+        subGenreColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("genre2"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<Media,String>("description"));
+        resultsTable.setItems(observableMediaList);
+        search(primaryGenre,secondaryGenre);
+     }    
     @FXML
     private void showNavUI(ActionEvent event) {
         stage = (Stage)exitButton.getScene().getWindow();
@@ -117,16 +116,12 @@ public class RecommendationUIController implements Initializable {
             switch(m.getGenre1()){
                 case "Horror":
                     horror+= 2;
-                    break;
                 case "Cartoon":
                     cartoon+= 2;
-                    break;
                 case "Romance":
                     romance+= 2;
-                    break;
                 case "Comedy":
                     comedy+= 2;
-                    break;
                 case "Thriller":
                     thriller+= 2;
                 case "Documentary":
@@ -135,16 +130,12 @@ public class RecommendationUIController implements Initializable {
             switch(m.getGenre2()){
                 case "Horror":
                     horror++;
-                    break;
                 case "Cartoon":
                     cartoon++;
-                    break;
                 case "Romance":
                     romance++;
-                    break;
                 case "Comedy":
                     comedy++;
-                    break;
                 case "Thriller":
                     thriller++;
                 case "Documentary":
