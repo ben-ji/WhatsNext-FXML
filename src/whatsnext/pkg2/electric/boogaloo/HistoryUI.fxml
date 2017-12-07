@@ -16,7 +16,6 @@
   <children>
     <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
       <children>
-        <Button fx:id="returnButton" layoutX="479.0" layoutY="369.0" mnemonicParsing="false" onAction="#showProfileUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Profile" />
         <Button fx:id="removeButton" layoutX="243.0" layoutY="361.0" mnemonicParsing="false" onAction="#removeSelectedMedia" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Remove Selection" />
         <ScrollPane layoutX="58.0" layoutY="44.0" prefHeight="287.0" prefWidth="485.0">
           <content>
@@ -40,7 +39,7 @@
           </font>
         </Label>
         <Button fx:id="clearAllButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#clearAllHistory" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Clear All" />
-        <Button id="returnButton" fx:id="exitButton" layoutX="445.0" layoutY="336.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" prefWidth="141.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Main Menu" />
+        <Button id="returnButton" fx:id="exitButton" layoutX="445.0" layoutY="361.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" prefWidth="141.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Main Menu" />
       </children>
     </AnchorPane>
   </children>

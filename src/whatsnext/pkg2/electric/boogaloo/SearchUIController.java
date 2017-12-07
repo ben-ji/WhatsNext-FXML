@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -64,6 +65,7 @@ public class SearchUIController implements Initializable {
     private ObservableList<Media> mediaList;
     @FXML
     private CheckBox incognitoButton;
+   
     
 
     /**
@@ -72,6 +74,10 @@ public class SearchUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         mediaList = FXCollections.observableArrayList();
+        
+        final Tooltip tooltipFriendSearch = new Tooltip();
+        tooltipFriendSearch.setText("Allows you to search for books and movies without affecting your history");
+        incognitoButton.setTooltip(tooltipFriendSearch);
         
     }    
 

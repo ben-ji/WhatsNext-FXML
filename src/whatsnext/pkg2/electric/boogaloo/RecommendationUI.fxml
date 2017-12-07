@@ -36,7 +36,6 @@
       </content>
     </ScrollPane>
     <Button fx:id="exitButton" layoutX="452.0" layoutY="361.0" mnemonicParsing="false" onAction="#showNavUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Main Menu" />
-    <Button fx:id="openSelectionButton" layoutX="222.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Open Selection in Browser" />
     <Label layoutX="18.0" layoutY="41.0" text="Based on your search history, Recommendations gives you a list of books and movies that you might enjoy" />
   </children>
 </AnchorPane>
