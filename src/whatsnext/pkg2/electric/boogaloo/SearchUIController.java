@@ -21,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
@@ -70,7 +72,13 @@ public class SearchUIController implements Initializable {
     @FXML
     private Insets x1;
     @FXML
-    private Font x2;
+    private RadioButton kevinButton;
+    @FXML
+    private ToggleGroup friendGroup;
+    @FXML
+    private RadioButton charleneButton;
+    @FXML
+    private RadioButton borisButton;
     
    
     
@@ -85,7 +93,6 @@ public class SearchUIController implements Initializable {
         final Tooltip tooltipFriendSearch = new Tooltip();
         tooltipFriendSearch.setText("Allows you to search for books and movies without affecting your history");
         incognitoButton.setTooltip(tooltipFriendSearch);
-        
     }    
 
     @FXML
@@ -158,6 +165,18 @@ public class SearchUIController implements Initializable {
         
         
         //Getting Positive Results
+        if(kevinButton.isSelected()){
+            positives.add("Horror");
+            positives.add("Thriller");
+        }
+        if(charleneButton.isSelected()){
+            positives.add("Romace");
+            positives.add("Comedy");
+        }
+        if(borisButton.isSelected()){
+            positives.add("Documentary");
+            positives.add("Cartoon");
+        }
         for(Media m : mediaList){
             for(String pos : positives){
                 if(m.getGenre1().equalsIgnoreCase(pos) || m.getGenre2().equalsIgnoreCase(pos)){
@@ -177,12 +196,6 @@ public class SearchUIController implements Initializable {
         for(Media p : positiveList){
             if((!negativeList.contains(p))&&(!resultsList.contains(p)))
                 resultsList.add(p);
-        }
-        
-        //Doing Secondary Searches Based on Friends
-        for(Media m : mediaList){
-            ArrayList<String> friendGenres = new ArrayList<String>();
-            
         }
         
         ResultCntl.getInstance(stage);
