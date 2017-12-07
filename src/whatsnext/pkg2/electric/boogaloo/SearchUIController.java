@@ -16,12 +16,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -65,6 +67,16 @@ public class SearchUIController implements Initializable {
     private ObservableList<Media> mediaList;
     @FXML
     private CheckBox incognitoButton;
+    @FXML
+    private Insets x1;
+    @FXML
+    private Button kevinButton;
+    @FXML
+    private Font x2;
+    @FXML
+    private Button charleneButton;
+    @FXML
+    private Button borisButton;
    
     
 
@@ -171,6 +183,13 @@ public class SearchUIController implements Initializable {
             if((!negativeList.contains(p))&&(!resultsList.contains(p)))
                 resultsList.add(p);
         }
+        
+        //Doing Secondary Searches Based on Friends
+        for(Media m : mediaList){
+            ArrayList<String> friendGenres = new ArrayList<String>();
+            
+        }
+        
         ResultCntl.getInstance(stage);
         ResultCntl.setMediaList(resultsList);
 
