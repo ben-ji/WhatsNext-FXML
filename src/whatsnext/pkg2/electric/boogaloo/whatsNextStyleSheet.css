@@ -10,3 +10,6 @@ and open the template in the editor.
 .button:hover {
     -fx-text-fill: red;
 }
+.button:selected {
+    -fx-background-color: blue;
+}

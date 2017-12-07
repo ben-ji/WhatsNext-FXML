@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.SearchUIController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whatsnext.pkg2.electric.boogaloo.SearchUIController">
   <children>
     <Label layoutX="134.0" layoutY="14.0" prefHeight="17.0" text="Search for Books and Movies">
       <font>
@@ -95,49 +94,17 @@
                 <Label alignment="CENTER" text="Kevin" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                 <Label alignment="CENTER" text="Charlene" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label alignment="CENTER" contentDisplay="LEFT" text="Boris" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Button fx:id="kevinButton" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="147.0" text="Click Me!" textAlignment="CENTER" textFill="TRANSPARENT" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                  <font>
-                    <Font name="System Bold" size="16.0" fx:id="x2" />
-                  </font>
-                  <graphic>
-                    <ImageView fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="false">
-                      <image>
-                        <Image url="@../../../../../../../../Images/desperadoprofilepic.jpg" />
-                      </image>
-                    </ImageView>
-                  </graphic>
-                  <stylesheets>
-                    <URL value="@whatsNextStyleSheet.css" />
-                  </stylesheets>
-                </Button>
-                <Button fx:id="charleneButton" contentDisplay="CENTER" font="$x2" mnemonicParsing="false" prefWidth="147.0" text="Click Me!" textAlignment="CENTER" textFill="TRANSPARENT" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                  <graphic>
-                    <ImageView fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="false">
-                      <image>
-                        <Image url="@../../../../../../../../Images/happyprofilepic.png" />
-                      </image>
-                    </ImageView>
-                  </graphic>
-                  <stylesheets>
-                    <URL value="@whatsNextStyleSheet.css" />
-                  </stylesheets>
-                </Button>
-                <Button fx:id="borisButton" contentDisplay="CENTER" font="$x2" mnemonicParsing="false" prefWidth="147.0" text="Click Me!" textAlignment="CENTER" textFill="TRANSPARENT" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                  <graphic>
-                    <ImageView fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="false">
-                      <image>
-                        <Image url="@../../../../../../../../Images/indifferentprofilepic.JPG" />
-                      </image>
-                    </ImageView>
-                  </graphic>
-                  <stylesheets>
-                    <URL value="@whatsNextStyleSheet.css" />
-                  </stylesheets>
-                </Button>
+                        <RadioButton fx:id="kevinButton" mnemonicParsing="false" text="Get a Recommendation!">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="friendGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="charleneButton" mnemonicParsing="false" text="Get a Recommendation!" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="borisButton" mnemonicParsing="false" text="Get a Recommendation!" toggleGroup="$friendGroup" GridPane.rowIndex="2" />
               </children>
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="159.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="61.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="161.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="41.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

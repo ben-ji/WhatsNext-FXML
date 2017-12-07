@@ -70,13 +70,8 @@ public class SearchUIController implements Initializable {
     @FXML
     private Insets x1;
     @FXML
-    private Button kevinButton;
-    @FXML
     private Font x2;
-    @FXML
-    private Button charleneButton;
-    @FXML
-    private Button borisButton;
+    
    
     
 
