@@ -7,6 +7,7 @@ package whatsnext.pkg2.electric.boogaloo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -79,6 +80,11 @@ public class FriendRecommendationUIController implements Initializable {
     }
 
     @FXML
-    private void getSelectedRow(ActionEvent event) {
+    public void getSelectedRow(){
+        Media tempMedia = resultsTable.getSelectionModel().getSelectedItem();
+        ArrayList<Media> tempList = new ArrayList<Media>();
+        tempList.add(tempMedia);
+        HistoryCntl.getInstance(stage);
+        HistoryCntl.addToMediaList(tempList);
     }
 }
