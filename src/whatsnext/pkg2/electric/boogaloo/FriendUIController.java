@@ -98,16 +98,97 @@ public class FriendUIController implements Initializable {
             }
         }
         FriendRecommendationCntl.getInstance().setRecommendationsList(passthroughList);
+//        FriendRecommendationCntl.getInstance().printContents();
         this.showFriendRecommendationUI();
 
     }
 
     @FXML
     private void cSearch(ActionEvent event) {
+        FriendRecommendationCntl.getInstance().setFriendName("Charlene");
+        FriendRecommendationCntl.getInstance().setFriendGenre1("Romance");
+        FriendRecommendationCntl.getInstance().setFriendGenre2("Comedy");
+        ArrayList<Media> passthroughList = new ArrayList<Media>();
+        ArrayList<String> genres = new ArrayList<String>();
+        genres.add("Horror");
+        genres.add("Cartoon");
+        genres.add("Romance");
+        genres.add("Comedy");
+        genres.add("Thriller");
+        genres.add("Documentary");
+        String tempTitle;
+        String tempGenre1;
+        String tempGenre2; 
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempTitle = "Book" + (i+1);
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, "author", 10));
+        }
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get((i+2) % 6);
+            tempGenre2 = genres.get(((i+2)*i)%6);
+            tempTitle = "Movie" + (i+1);
+            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"description",99, "rating", 10));
+        }
+        for(Media m : mediaList){
+            if(m.getGenre1().equalsIgnoreCase("Romance") || m.getGenre2().equalsIgnoreCase("Romance")){
+                passthroughList.add(m);
+            } 
+            else{
+                if(m.getGenre1().equalsIgnoreCase("Comedy") || m.getGenre2().equalsIgnoreCase("Comedy")){
+                    passthroughList.add(m);
+                }  
+            }
+        }
+        FriendRecommendationCntl.getInstance().setRecommendationsList(passthroughList);
+//        FriendRecommendationCntl.getInstance().printContents();
+        this.showFriendRecommendationUI();
+
     }
 
     @FXML
     private void bSearch(ActionEvent event) {
+                FriendRecommendationCntl.getInstance().setFriendName("Boris");
+        FriendRecommendationCntl.getInstance().setFriendGenre1("Cartoon");
+        FriendRecommendationCntl.getInstance().setFriendGenre2("Documentary");
+        ArrayList<Media> passthroughList = new ArrayList<Media>();
+        ArrayList<String> genres = new ArrayList<String>();
+        genres.add("Horror");
+        genres.add("Cartoon");
+        genres.add("Romance");
+        genres.add("Comedy");
+        genres.add("Thriller");
+        genres.add("Documentary");
+        String tempTitle;
+        String tempGenre1;
+        String tempGenre2; 
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempGenre2 = genres.get(ThreadLocalRandom.current().nextInt(0, 6));
+            tempTitle = "Book" + (i+1);
+            mediaList.add(new Book(tempTitle,tempGenre1, tempGenre2,"description",99, "author", 10));
+        }
+        for(int i = 0; i < 20; i ++){
+            tempGenre1 = genres.get((i+2) % 6);
+            tempGenre2 = genres.get(((i+2)*i)%6);
+            tempTitle = "Movie" + (i+1);
+            mediaList.add(new Movie(tempTitle,tempGenre1, tempGenre2,"description",99, "rating", 10));
+        }
+        for(Media m : mediaList){
+            if(m.getGenre1().equalsIgnoreCase("Cartoon") || m.getGenre2().equalsIgnoreCase("Cartoon")){
+                passthroughList.add(m);
+            } 
+            else{
+                if(m.getGenre1().equalsIgnoreCase("Documentary") || m.getGenre2().equalsIgnoreCase("Documentary")){
+                    passthroughList.add(m);
+                }  
+            }
+        }
+        FriendRecommendationCntl.getInstance().setRecommendationsList(passthroughList);
+//        FriendRecommendationCntl.getInstance().printContents();
+        this.showFriendRecommendationUI();
+
     }
 
     private void showFriendRecommendationUI() {
