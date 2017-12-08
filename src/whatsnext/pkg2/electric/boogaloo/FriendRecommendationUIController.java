@@ -50,7 +50,7 @@ public class FriendRecommendationUIController implements Initializable {
         } catch(IOException ex){
             ex.printStackTrace();
         }
-        FriendRecommendationCntl.getInstance(stage).showFriendUI(root, stage);
+        FriendRecommendationCntl.getInstance().showFriendUI(root, stage);
         
     }
 }
