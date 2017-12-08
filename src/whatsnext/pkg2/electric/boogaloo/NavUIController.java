@@ -37,6 +37,8 @@ public class NavUIController implements Initializable {
     private Button recommendationButton;
     @FXML
     private Button historyButton;
+    @FXML
+    private Button friendsListButton;
     
     /**
      * Initializes the controller class.
@@ -72,5 +74,11 @@ public class NavUIController implements Initializable {
     public void showHistory(){
         stage = (Stage)historyButton.getScene().getWindow();
         NavCntl.getInstance(stage).showHistory(stage);
+    }
+    
+    @FXML
+    public void showFriendUI(){
+        stage = (Stage)friendsListButton.getScene().getWindow();
+        NavCntl.getInstance(stage).showFriendUI(stage);
     }
 }

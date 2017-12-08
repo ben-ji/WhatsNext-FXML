@@ -27,14 +27,32 @@
       </font>
     </Label>
     <Label fx:id="dateCreated" layoutX="151.0" layoutY="73.0" prefHeight="17.0" prefWidth="86.0" text="ERROR ERROR" />
-    <Label fx:id="userInfoLabel" font="$x1" layoutX="14.0" layoutY="117.0" prefHeight="25.0" prefWidth="265.0" text="User Info:" />
-    <Label fx:id="favGenreLabel" font="$x1" layoutX="15.0" layoutY="145.0" text="Favorite Genres: " />
-    <Label fx:id="achievementsLabel" font="$x1" layoutX="16.0" layoutY="171.0" text="Achievements:" />
-    <Label fx:id="friendsLabel" font="$x1" layoutX="15.0" layoutY="196.0" text="Friends: " />
     <Button fx:id="doneButton" layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateModel" prefHeight="25.0" prefWidth="96.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Done" />
-    <TextField fx:id="userInfoField" layoutX="142.0" layoutY="117.0" prefWidth="169.0" />
-    <TextField fx:id="favGenreField" layoutX="142.0" layoutY="144.0" prefWidth="169.0" />
-    <TextField fx:id="achievementsField" layoutX="142.0" layoutY="170.0" prefWidth="169.0" />
-    <TextField fx:id="friendsField" layoutX="142.0" layoutY="196.0" prefHeight="22.0" prefWidth="169.0" />
+    <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="135.0" prefHeight="189.0" prefWidth="297.0">
+      <children>
+        <GridPane prefHeight="189.0" prefWidth="297.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <Label fx:id="favGenreLabel" font="$x1" text="Favorite Genres: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="userInfoLabel" font="$x1" prefHeight="25.0" prefWidth="265.0" text="User Info:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="achievementsLabel" font="$x1" text="Achievements:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="friendsLabel" font="$x1" text="Friends: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="userInfoField" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="favGenreField" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="achievementsField" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="friendsField" prefHeight="22.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
   </children>
 </AnchorPane>

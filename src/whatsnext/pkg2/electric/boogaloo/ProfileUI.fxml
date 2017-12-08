@@ -27,23 +27,41 @@
       </font>
     </Label>
     <Label fx:id="dateCreated" layoutX="257.0" layoutY="178.0" prefHeight="17.0" prefWidth="75.0" text="ERROR ERROR" />
-    <Label fx:id="userInfoLabel" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="265.0" text="Bio:" textAlignment="LEFT">
-      <font>
-        <Font name="Trebuchet MS Bold" size="12.0" fx:id="x1" />
-      </font>
-    </Label>
-    <Label fx:id="favGenreLabel" font="$x1" layoutX="14.0" layoutY="267.0" text="Preferred Genres:" textAlignment="LEFT" />
-    <Label fx:id="achievementsLabel" font="$x1" layoutX="14.0" layoutY="291.0" text="Achievements:" textAlignment="LEFT" />
-    <Label fx:id="friendsLabel" font="$x1" layoutX="14.0" layoutY="316.0" text="Friends: " textAlignment="LEFT" />
     <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#showEditProfileUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Edit User Info" />
-    <Label fx:id="favGenresDisplay" layoutX="130.0" layoutY="266.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="userInfoDisplay" layoutX="130.0" layoutY="241.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="achievementsDisplay" layoutX="130.0" layoutY="290.0" text="Label" textAlignment="LEFT" />
-    <Label fx:id="friendsDisplay" layoutX="130.0" layoutY="315.0" text="Label" textAlignment="LEFT" />
     <Label layoutX="233.0" layoutY="14.0" text="Your Profile">
       <font>
         <Font name="Georgia" size="25.0" />
       </font>
     </Label>
+    <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="221.0" prefWidth="572.0">
+      <children>
+        <GridPane prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <Label fx:id="userInfoLabel" prefHeight="25.0" prefWidth="265.0" text="User Info:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <font>
+                <Font name="Trebuchet MS Bold" size="12.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label fx:id="favGenreLabel" font="$x1" text="Preferred Genres:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="achievementsLabel" font="$x1" text="Achievements:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="friendsLabel" font="$x1" text="Friends: " textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="friendsDisplay" text="Label" textAlignment="LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="achievementsDisplay" text="Label" textAlignment="LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="favGenresDisplay" text="Label" textAlignment="LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="userInfoDisplay" text="Label" textAlignment="LEFT" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.0" minWidth="10.0" prefWidth="462.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
   </children>
 </AnchorPane>

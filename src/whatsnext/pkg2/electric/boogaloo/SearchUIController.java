@@ -90,9 +90,21 @@ public class SearchUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         mediaList = FXCollections.observableArrayList();
         
-        final Tooltip tooltipFriendSearch = new Tooltip();
-        tooltipFriendSearch.setText("Allows you to search for books and movies without affecting your history");
-        incognitoButton.setTooltip(tooltipFriendSearch);
+        final Tooltip TOOLTIPFRIENDSEARCH = new Tooltip();
+        TOOLTIPFRIENDSEARCH.setText("Allows you to search for books and movies without affecting your history");
+        incognitoButton.setTooltip(TOOLTIPFRIENDSEARCH);
+        
+        final Tooltip TOOLTIPKEVINBUTTON = new Tooltip();
+        TOOLTIPKEVINBUTTON.setText("Kevin enjoys thriller and horror!");
+        kevinButton.setTooltip(TOOLTIPKEVINBUTTON);
+        
+        final Tooltip TOOLTIPCHARLENEBUTTON = new Tooltip();
+        TOOLTIPCHARLENEBUTTON.setText("Charlene enjoys romance and comedy!");
+        charleneButton.setTooltip(TOOLTIPCHARLENEBUTTON);
+        
+        final Tooltip TOOLTIPBORISBUTTON = new Tooltip();
+        TOOLTIPBORISBUTTON.setText("Boris enjoys documentary and cartoon!");
+        borisButton.setTooltip(TOOLTIPBORISBUTTON);
     }    
 
     @FXML

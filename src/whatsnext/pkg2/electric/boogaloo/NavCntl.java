@@ -78,4 +78,14 @@ public class NavCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    
+    public void showFriendUI(Stage stage){
+        try{
+            root = FXMLLoader.load(getClass().getResource("FriendUI.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching FriendUI.fxml");
+        }
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
