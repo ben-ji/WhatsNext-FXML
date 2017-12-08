@@ -82,6 +82,9 @@ public class FriendRecommendationUIController implements Initializable {
     @FXML
     public void getSelectedRow(){
         Media tempMedia = resultsTable.getSelectionModel().getSelectedItem();
+        if(tempMedia.getTitle() == ""){
+            return;
+        }
         ArrayList<Media> tempList = new ArrayList<Media>();
         tempList.add(tempMedia);
         HistoryCntl.getInstance(stage);
