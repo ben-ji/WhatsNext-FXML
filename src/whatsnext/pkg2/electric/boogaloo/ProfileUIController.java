@@ -53,8 +53,11 @@ public class ProfileUIController implements Initializable {
     private Label achievementsLabel;
     @FXML
     private Label friendsLabel;
+    @FXML
     private Stage stage;
+    @FXML
     private Parent root;
+    @FXML
     private Scene scene;
     @FXML
     private Label favGenresDisplay;
@@ -64,9 +67,12 @@ public class ProfileUIController implements Initializable {
     private Label achievementsDisplay;
     @FXML
     private Label friendsDisplay;
-    FileChooser fileChooser;
+    @FXML
     private ImageView profilePicView;
+    @FXML
     private Button profilePicButton;
+    @FXML
+    private String imageFile;
    
     /**
      * Initializes the controller class.
@@ -129,20 +135,17 @@ public class ProfileUIController implements Initializable {
     
     
     @FXML
-    private void loadImage(ActionEvent event) {
-        fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(stage);
-        if (file != null) {
-            try {
-                System.out.println("File Was Selected");
-                URL url = file.toURI().toURL();
-                profilePicView.setImage(new Image(url.toExternalForm()));
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+    private void loadImage(ActionEvent event) throws MalformedURLException {
+        
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        File selectedFile = fileChooser.showOpenDialog(exitButton.getScene().getWindow());
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
             
-            
+            Image image = new Image(imageFile);
+            profilePicView.setImage(image);
         }
-    }
+}
     
  }
