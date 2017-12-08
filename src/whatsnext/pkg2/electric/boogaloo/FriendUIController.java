@@ -98,6 +98,7 @@ public class FriendUIController implements Initializable {
             }
         }
         FriendRecommendationCntl.getInstance().setRecommendationsList(passthroughList);
+        this.showFriendRecommendationUI();
 
     }
 
@@ -107,5 +108,10 @@ public class FriendUIController implements Initializable {
 
     @FXML
     private void bSearch(ActionEvent event) {
+    }
+
+    private void showFriendRecommendationUI() {
+        stage = (Stage)returnButton.getScene().getWindow();
+        FriendCntl.getInstance().showFriendRecommendationUI(stage);
     }
 }

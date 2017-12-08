@@ -33,6 +33,16 @@ public class FriendRecommendationUIController implements Initializable {
     
     @FXML
     private Button selectResultButton;
+    @FXML
+    private TableView<?> resultsTable;
+    @FXML
+    private TableColumn<?, ?> titleColumn;
+    @FXML
+    private TableColumn<?, ?> genreColumn;
+    @FXML
+    private TableColumn<?, ?> subGenreColumn;
+    @FXML
+    private TableColumn<?, ?> descriptionColumn;
     /**
      * Initializes the controller class.
      */
@@ -52,5 +62,9 @@ public class FriendRecommendationUIController implements Initializable {
         }
         FriendRecommendationCntl.getInstance().showFriendUI(root, stage);
         
+    }
+
+    @FXML
+    private void getSelectedRow(ActionEvent event) {
     }
 }
