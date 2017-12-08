@@ -5,9 +5,14 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +21,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -56,7 +64,10 @@ public class ProfileUIController implements Initializable {
     private Label achievementsDisplay;
     @FXML
     private Label friendsDisplay;
-
+    FileChooser fileChooser;
+    private ImageView profilePicView;
+    private Button profilePicButton;
+   
     /**
      * Initializes the controller class.
      */
@@ -116,4 +127,22 @@ public class ProfileUIController implements Initializable {
         ProfileCntl.getInstance(stage).showHistoryUI(root);
     }
     
-}
+    
+    @FXML
+    private void loadImage(ActionEvent event) {
+        fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            try {
+                System.out.println("File Was Selected");
+                URL url = file.toURI().toURL();
+                profilePicView.setImage(new Image(url.toExternalForm()));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            
+            
+        }
+    }
+    
+ }

@@ -100,16 +100,16 @@
                 <Label alignment="CENTER" text="Kevin" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM" />
                 <Label alignment="CENTER" text="Charlene" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
                 <Label alignment="CENTER" contentDisplay="LEFT" text="Boris" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
-                <RadioButton fx:id="kevinButton" mnemonicParsing="false" text="Get a Recommendation!" textAlignment="CENTER" wrapText="true">
+                <RadioButton fx:id="kevinButton" mnemonicParsing="false" text="Merge profile with:" textAlignment="CENTER" wrapText="true">
                   <toggleGroup>
                     <ToggleGroup fx:id="friendGroup" />
                   </toggleGroup>
                 </RadioButton>
-                <RadioButton fx:id="charleneButton" mnemonicParsing="false" text="Get a Recommendation!" textAlignment="CENTER" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="1" />
-                <RadioButton fx:id="borisButton" mnemonicParsing="false" text="Get a Recommendation!" textAlignment="CENTER" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="2" />
+                <RadioButton fx:id="charleneButton" mnemonicParsing="false" text="Merge profile with:" textAlignment="CENTER" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="1" />
+                <RadioButton fx:id="borisButton" mnemonicParsing="false" text="Merge profile with:" textAlignment="CENTER" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="2" />
                 <ImageView fitHeight="46.500099999997474" fitWidth="62.00013333332996" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
                   <image>
-                    <Image url="Images/desperadoprofilepic.jpg" backgroundLoading="true" />
+                    <Image url="Images/desperadoprofilepic.jpg" backgroundLoading="false" />
                   </image>
                 </ImageView>
                 <ImageView fitHeight="46.500099999997474" fitWidth="62.00013333332996" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
