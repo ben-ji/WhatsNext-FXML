@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -46,11 +47,14 @@ public class FriendRecommendationUIController implements Initializable {
     private TableColumn<Media, String> subGenreColumn;
     @FXML
     private TableColumn<Media, String> descriptionColumn;
+    @FXML
+    private Label genreLabel;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        genreLabel.setText(FriendRecommendationCntl.getInstance().getFriendName() + " likes " + FriendRecommendationCntl.getInstance().getFriendGenre1() + " and " + FriendRecommendationCntl.getInstance().getFriendGenre2() + " themes");
         ObservableList<Media> listOfMedia = FXCollections.observableArrayList();
         for(Media m : FriendRecommendationCntl.getInstance().getRecommendationsList()){
             listOfMedia.add(m);

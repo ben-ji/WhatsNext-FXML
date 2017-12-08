@@ -39,6 +39,10 @@ public class FriendRecommendationCntl {
     
     public void printContents(){
         System.out.println(this.friendName + ": " + friendGenre1 + ", " + friendGenre2);
+        System.out.println("List of Media:");
+        for(Media m: recommendationsList){
+            System.out.println(m.getTitle() + ", " + m.getGenre1() + " and " + m.getGenre2());
+        }
     }    
     /**
      * @return the friendName
