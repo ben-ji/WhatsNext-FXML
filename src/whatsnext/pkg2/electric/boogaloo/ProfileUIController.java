@@ -88,6 +88,7 @@ public class ProfileUIController implements Initializable {
         favGenresDisplay.setText(pm.getGenres());
         achievementsDisplay.setText(pm.getAchievements());
         friendsDisplay.setText(pm.getFriends());
+        this.loadPreviousProPic();
     }    
 
     @FXML
@@ -133,6 +134,12 @@ public class ProfileUIController implements Initializable {
         ProfileCntl.getInstance(stage).showHistoryUI(root);
     }
     
+    private void loadPreviousProPic(){
+        if(!(ProfileModel.getInstance().getImage() == null)){
+            profilePicView.setImage(ProfileModel.getInstance().getImage());
+        }
+    }
+    
     
     @FXML
     private void loadImage(ActionEvent event) throws MalformedURLException {
@@ -145,7 +152,7 @@ public class ProfileUIController implements Initializable {
             
             Image image = new Image(imageFile);
             profilePicView.setImage(image);
+            ProfileModel.getInstance().setImage(image);
         }
+    }
 }
-    
- }

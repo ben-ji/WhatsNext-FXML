@@ -5,7 +5,7 @@
  */
 package whatsnext.pkg2.electric.boogaloo;
 
-import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class ProfileModel {
     private static ProfileModel instance = null;
+    private Image image;
     private String username;
     private String dateCreated;
     private String userInfo;
@@ -134,6 +135,20 @@ public class ProfileModel {
      */
     public void setFriends(String friends) {
         this.friends = friends;
+    }
+
+    /**
+     * @return the image
+     */
+    public Image getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(Image image) {
+        this.image = image;
     }
     
 }
