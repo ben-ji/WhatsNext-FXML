@@ -93,11 +93,6 @@ public class EditUIController implements Initializable {
     }
 
     @FXML
-    private void showOptionsUI(ActionEvent event) {
-        //TODO: add options
-    }
-
-    @FXML
     private void updateModel(ActionEvent event) {
         System.out.println("Setting userInfo");
         pm.setUserInfo(userInfoField.getText());

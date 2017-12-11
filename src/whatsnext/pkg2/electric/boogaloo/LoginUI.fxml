@@ -16,9 +16,9 @@
   <children>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0" snapToPixel="false">
       <children>
-        <TextField fx:id="uf" layoutX="200.0" layoutY="148.0" onAction="#authenticate" prefHeight="25.0" prefWidth="200.0" />
-        <PasswordField fx:id="pf" layoutX="200.0" layoutY="189.0" onAction="#authenticate" prefHeight="25.0" prefWidth="200.0" />
-        <Button fx:id="SubmitButton" cancelButton="false" defaultButton="true" layoutX="225.0" layoutY="224.0" mnemonicParsing="false" onAction="#authenticate" prefHeight="35.0" prefWidth="150.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Sign in">
+        <TextField fx:id="uf" layoutX="200.0" layoutY="159.0" onAction="#authenticate" prefHeight="25.0" prefWidth="200.0" />
+        <PasswordField fx:id="pf" layoutX="200.0" layoutY="200.0" onAction="#authenticate" prefHeight="25.0" prefWidth="200.0" />
+        <Button fx:id="SubmitButton" cancelButton="false" defaultButton="true" layoutX="225.0" layoutY="246.0" mnemonicParsing="false" onAction="#authenticate" prefHeight="35.0" prefWidth="150.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Sign in">
           <font>
             <Font name="Verdana" size="14.0" fx:id="x3" />
           </font>
@@ -28,20 +28,18 @@
             <Font name="Georgia" size="32.0" />
           </font>
         </Label>
-        <Label layoutX="134.0" layoutY="195.0" prefWidth="54.0" text="Password:">
+        <Label layoutX="134.0" layoutY="206.0" prefWidth="54.0" text="Password:">
           <font>
             <Font name="Trebuchet MS" size="12.0" fx:id="x1" />
           </font>
         </Label>
-        <Label font="$x1" layoutX="134.0" layoutY="154.0" text="Username:" />
+        <Label font="$x1" layoutX="134.0" layoutY="165.0" text="Username:" />
         <Label fx:id="errorLabel" layoutX="189.0" layoutY="16.0" prefHeight="17.0" prefWidth="223.0" textFill="RED" />
         <Label layoutX="180.0" layoutY="117.0" text="Already have an account? Sign in below">
           <font>
             <Font name="Verdana" size="12.0" fx:id="x2" />
           </font>
         </Label>
-        <Label font="$x2" layoutX="229.0" layoutY="295.0" text="Don't have an account?" />
-        <Button font="$x3" layoutX="225.0" layoutY="318.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;" text="Sign up" />
       </children>
     </Pane>
   </children>

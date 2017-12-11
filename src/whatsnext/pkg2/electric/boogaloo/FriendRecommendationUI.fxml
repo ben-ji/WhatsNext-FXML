@@ -39,7 +39,7 @@
             <Font name="Georgia" size="25.0" />
           </font>
         </Label>
-        <Label fx:id="genreLabel" layoutX="94.0" layoutY="45.0" text="ERROR ERROR ERROR" />
+        <Label fx:id="genreLabel" contentDisplay="CENTER" layoutX="195.0" layoutY="45.0" text="ERROR ERROR ERROR" />
       </children>
     </AnchorPane>
   </children>

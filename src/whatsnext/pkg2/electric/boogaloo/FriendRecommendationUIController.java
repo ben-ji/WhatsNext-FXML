@@ -55,7 +55,7 @@ public class FriendRecommendationUIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        genreLabel.setText(FriendRecommendationCntl.getInstance().getFriendName() + " likes " + FriendRecommendationCntl.getInstance().getFriendGenre1() + " and " + FriendRecommendationCntl.getInstance().getFriendGenre2() + " themes");
+        genreLabel.setText(FriendRecommendationCntl.getInstance().getFriendName() + " likes " + FriendRecommendationCntl.getInstance().getFriendGenre1() + " and " + FriendRecommendationCntl.getInstance().getFriendGenre2() + " genres");
         ObservableList<Media> listOfMedia = FXCollections.observableArrayList();
         for(Media m : FriendRecommendationCntl.getInstance().getRecommendationsList()){
             listOfMedia.add(m);

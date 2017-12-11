@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -21,9 +22,8 @@
         <Font name="Georgia" size="24.0" />
       </font>
     </Label>
-    <Button fx:id="menuSearchButton" layoutX="359.0" layoutY="125.0" mnemonicParsing="false" onAction="#showSearch" prefHeight="25.0" prefWidth="180.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Search for Movies and Books" />
     <Button fx:id="profileButton" layoutX="516.0" layoutY="361.0" mnemonicParsing="false" onAction="#showProfile" prefHeight="25.0" prefWidth="70.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Profile" />
-    <Button id="exitProgram" fx:id="logoutButton" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: red;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Logout" textFill="#ff2929" />
+    <Button id="exitProgram" fx:id="logoutButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: red;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Logout" textFill="#ff2929" />
     <ImageView fitHeight="285.09124755859375" fitWidth="332.8052617232729" layoutX="14.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../../../../../../../Images/whatsnextlogo.png" />
@@ -34,8 +34,18 @@
         <Font name="Verdana Bold Italic" size="12.0" />
       </font>
     </Label>
-    <Button id="menuSearchButton" fx:id="recommendationButton" layoutX="359.0" layoutY="255.0" mnemonicParsing="false" onAction="#showRecommendation" prefHeight="25.0" prefWidth="203.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="History-Based Recommendations" />
-    <Button fx:id="historyButton" layoutX="359.0" layoutY="190.0" mnemonicParsing="false" onAction="#showHistory" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="History" />
-    <Button id="friendListButton" fx:id="friendsListButton" layoutX="359.0" layoutY="335.0" mnemonicParsing="false" onAction="#showFriendUI" text="Friends List" />
+    <VBox layoutX="351.0" layoutY="69.0" prefHeight="286.0" prefWidth="221.0">
+      <children>
+        <Button fx:id="menuSearchButton" mnemonicParsing="false" onAction="#showSearch" prefHeight="25.0" prefWidth="180.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Search for Movies and Books">
+          <VBox.margin>
+            <Insets top="40.0" fx:id="x1" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="historyButton" mnemonicParsing="false" onAction="#showHistory" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="History" VBox.margin="$x1" />
+        <Button id="menuSearchButton" fx:id="recommendationButton" mnemonicParsing="false" onAction="#showRecommendation" prefHeight="25.0" prefWidth="203.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="History-Based Recommendations" VBox.margin="$x1" />
+        <Button id="friendListButton" fx:id="friendsListButton" mnemonicParsing="false" onAction="#showFriendUI" prefHeight="24.999900000002526" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Friends List" VBox.margin="$x1" />
+      </children>
+    </VBox>
+    <Button fx:id="helpButton" layoutX="541.0" layoutY="14.0" mnemonicParsing="false" onAction="#showHelp" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Help" />
   </children>
 </AnchorPane>

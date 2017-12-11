@@ -88,4 +88,14 @@ public class NavCntl {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    
+    public void showHelp(Stage stage){
+        try{
+            root = FXMLLoader.load(getClass().getResource("showHelp.fxml"));
+        } catch(IOException ex){
+            System.out.println("Error fetching showHelp.fxml");
+        }
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }

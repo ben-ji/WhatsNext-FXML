@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="whatsnext.pkg2.electric.boogaloo.ShowHelpController">
+  <children>
+    <Button fx:id="returnButton" layoutX="452.0" layoutY="365.0" mnemonicParsing="false" onAction="#showNavUI" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Return to Main Menu" />
+    <ScrollPane id="ScrollPane" layoutX="53.0" layoutY="58.0" prefHeight="286.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="495.0">
+      <content>
+        <AnchorPane id="AnchorPane" prefHeight="285.0" prefWidth="480.0">
+          <children>
+            <TabPane prefHeight="285.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Navigation">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="430.0">
+                      <children>
+                        <TextArea editable="false" prefHeight="279.0" prefWidth="572.0" text="When a user is authenticated, they are brought to the NavUI, or Main Menu. The NavUI provides navigation to five separate scenes with an assortment of functions. These scenes include:&#10;Friends List&#10;Search Menu&#10;History&#10;Recommendations&#10;Profile&#10;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Profile">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextArea editable="false" prefHeight="279.0" prefWidth="572.0" text="A user has the ability to customize their user profile in the profileUI, which can be accessed from the NavUI by clicking the “Profile” button. The user is greeted by a blank profile picture box, and four empty text fields. These can be edited by pressing the “Edit User Info” button for the text fields, and the “Change Profile Picture” button for the profile picture. Users can use any picture on their file system as their profile picture." wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Search">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextArea editable="false" prefHeight="279.0" prefWidth="572.0" text="The main feature of our application is the search function. When a user navigates to the search menu, they are able to perform three use cases, including:&#10;Searching for Books and Movies using a set of Filters&#10;Searching for Books and Movies using a set of Filters for a Friend (Incognito)&#10;Searching for Books and Movies using a set of Filters AND a Merged Profile&#10;&#10;Each one of the above listed searches will bring the user to the ResultsUI, which displays a table organizing the results of their search. The user has the ability to select any of these selections and send them to their history. This is useful when the user is searching in incognito mode and would like to save one of the results for later reference. &#10;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="History">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextArea editable="false" prefHeight="279.0" prefWidth="572.0" text="After a user is finished searching for books and movies, they can return to the NavUI which has a button leading to the HistoryUI. HistoryUI displays all books and movies that were searched for by the user in chronological order. If the user searches “for a friend” aka incognito mode, the results will not be sent to their history automatically. They must be individually selected and sent to history in that case. These results are persistent, meaning they will remain in the user's history until they are cleared. " wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Recommendations">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextArea editable="false" prefHeight="279.0" prefWidth="572.0" text="There are two ways to get recommendations in our application. Firstly, a user can navigate to the RecommendationUI by clicking “History-Based Recommendations” in the NavUI. This scene displays a table that gives the user a list of recommended books and movies based on their search history. It goes through the user’s entire history, counts how many times each genre shows up, tallies them up, and gives recommendations based on the top two genres. &#10;&#10;The second way for a user to get book and movie recommendations is by navigating to their friends list, which can be reached from the NavUI. Their friends list shows their friends (names and profile pictures), and a “Get Recommendation” button, which leads to the FriendRecommendationUI. Books and movies are displayed in this scene based on each friend’s preference in genre(s). " wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+    <Label layoutX="229.0" layoutY="14.0" minHeight="21.000106811523438" prefHeight="32.0" text="User Manual">
+      <font>
+        <Font name="Georgia" size="25.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

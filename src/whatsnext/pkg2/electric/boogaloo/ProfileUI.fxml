@@ -20,13 +20,13 @@
       </stylesheets>
     </Button>
     <Button fx:id="logoutButton" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: red;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Logout" textFill="#a12929" />
-    <Label fx:id="usernameLabel" layoutX="51.0" layoutY="78.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
-    <Label layoutX="49.0" layoutY="107.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:">
+    <Label fx:id="usernameLabel" layoutX="16.0" layoutY="64.0" prefHeight="17.0" prefWidth="130.0" text="ERROR ERROR" />
+    <Label layoutX="14.0" layoutY="93.0" prefHeight="17.0" prefWidth="86.0" text="Date Created:">
       <font>
         <Font name="System Bold" size="12.0" />
       </font>
     </Label>
-    <Label fx:id="dateCreated" layoutX="49.0" layoutY="124.0" prefHeight="17.0" prefWidth="75.0" text="ERROR ERROR" />
+    <Label fx:id="dateCreated" layoutX="14.0" layoutY="110.0" prefHeight="17.0" prefWidth="75.0" text="ERROR ERROR" />
     <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#showEditProfileUI" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Edit User Info" />
     <Label layoutX="233.0" layoutY="14.0" text="Your Profile">
       <font>
