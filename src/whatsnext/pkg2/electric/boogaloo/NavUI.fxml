@@ -46,6 +46,20 @@
         <Button id="friendListButton" fx:id="friendsListButton" mnemonicParsing="false" onAction="#showFriendUI" prefHeight="24.999900000002526" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Friends List" VBox.margin="$x1" />
       </children>
     </VBox>
-    <Button fx:id="helpButton" layoutX="541.0" layoutY="14.0" mnemonicParsing="false" onAction="#showHelp" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Help" />
+    <Button fx:id="helpButton" contentDisplay="RIGHT" layoutX="499.0" layoutY="14.0" minHeight="25.0" minWidth="46.0" mnemonicParsing="false" onAction="#showHelp" prefHeight="41.0" prefWidth="87.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}">
+      <graphic>
+        <HBox alignment="CENTER" maxHeight="45.0" maxWidth="35.0" mouseTransparent="true">
+          <children>
+            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="35.0" text="Help" HBox.hgrow="ALWAYS" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="41.000099999997474" fitWidth="31.88896709052099" preserveRatio="true" HBox.hgrow="NEVER">
+              <image>
+                <Image url="@../../../../../../../../Images/questionmark_icon.jpg" />
+              </image>
+            </ImageView>
+          </children>
+        </HBox>
+      </graphic>
+    </Button>
   </children>
 </AnchorPane>
