@@ -20,11 +20,9 @@ public class SearchCntl {
     private static Parent root;
     private static SearchCntl instance;
     private static Stage stage;
-    private SearchModel sm;
     
     public SearchCntl(Stage stage) {
         this.stage = stage;
-        this.sm = SearchModel.getInstance();
     }
     
    
