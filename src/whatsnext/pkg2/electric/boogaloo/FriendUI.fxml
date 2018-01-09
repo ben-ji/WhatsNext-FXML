@@ -32,17 +32,17 @@
             <Label text="Boris" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <ImageView fitHeight="82.06253814697266" fitWidth="106.00001525878906" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <image>
-                <Image url="Images/desperadoprofilepic.jpg" backgroundLoading="false" />
+                <Image url="Images/baseprofilepic02.jpeg" backgroundLoading="false" />
               </image>
             </ImageView>
             <ImageView fitHeight="82.06253814697266" fitWidth="106.00001525878906" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <image>
-                <Image url="Images/happyprofilepic.png" backgroundLoading="true" />
+                <Image url="Images/baseprofilepic01.jpg" backgroundLoading="true" />
               </image>
             </ImageView>
             <ImageView fitHeight="82.06253814697266" fitWidth="106.00001525878906" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <image>
-                <Image url="Images/indifferentprofilepic.JPG" backgroundLoading="true" />
+                <Image url="Images/bad-profile-pic-2.jpeg" backgroundLoading="true" />
               </image>
             </ImageView>
           </children>

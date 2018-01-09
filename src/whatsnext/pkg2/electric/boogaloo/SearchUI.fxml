@@ -109,17 +109,17 @@
                 <RadioButton fx:id="borisButton" mnemonicParsing="false" text="Merge profile with:" textAlignment="CENTER" toggleGroup="$friendGroup" wrapText="true" GridPane.rowIndex="2" />
                 <ImageView fitHeight="46.500099999997474" fitWidth="62.00013333332996" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
                   <image>
-                    <Image url="Images/desperadoprofilepic.jpg" backgroundLoading="false" />
+                    <Image url="Images/baseprofilepic02.jpeg" backgroundLoading="false" />
                   </image>
                 </ImageView>
                 <ImageView fitHeight="46.500099999997474" fitWidth="62.00013333332996" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                   <image>
-                    <Image url="Images/happyprofilepic.png" />
+                    <Image url="Images/baseprofilepic01.jpg" />
                   </image>
                 </ImageView>
                 <ImageView fitHeight="46.500099999997474" fitWidth="62.00013333332996" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                   <image>
-                    <Image url="Images/indifferentprofilepic.JPG" />
+                    <Image url="Images/bad-profile-pic-2.jpeg" />
                   </image>
                 </ImageView>
               </children>
